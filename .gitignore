@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+eq_tex/
+.DS_Store
