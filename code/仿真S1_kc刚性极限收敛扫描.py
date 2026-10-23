@@ -64,9 +64,19 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-# 中文字体回退（按本机环境自动匹配）
-plt.rcParams["font.sans-serif"] = ["SimHei", "Noto Sans CJK SC", "Microsoft YaHei",
-                                     "Arial Unicode MS", "DejaVu Sans"]
+# ---- 中文字体：优先注册系统 Noto CJK，再按常见本机字体回退 ----
+from matplotlib import font_manager as _fm
+
+for _p in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+           "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"):
+    if os.path.exists(_p):
+        try:
+            _fm.fontManager.addfont(_p)
+        except Exception:
+            pass
+plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "PingFang SC",
+                                   "Noto Sans CJK SC", "Noto Sans CJK JP",
+                                   "Arial Unicode MS", "DejaVu Sans"]
 plt.rcParams["axes.unicode_minus"] = False
 
 # ---------------- 物理参数（与 code/粉笔_N下降段_完整模型.py 一致） ----------------
@@ -221,11 +231,14 @@ def run_dual(kc, N0, omega0, mu):
 
 
 # ============================== 收敛诊断 ==============================
-def add_diagnostics(rows):
-    """在每个 (N0, omega0) 组内（按 kc 排序）补收敛诊断列。"""
+def add_diagnostics(rows, mode):
+    """组内（按 kc 排序）补收敛诊断列。
+    fixed_N0 模式按 (N0, omega0) 分组；fixed_delta0 模式 N0=k_c·δ0 随 k_c 变化，
+    改按 omega0 分组（同组即同一条 k_c 扫描线）。"""
     groups = {}
     for r in rows:
-        groups.setdefault((r["N0"], r["omega0"]), []).append(r)
+        gkey = (r["N0"], r["omega0"]) if mode == "fixed_N0" else (0.0, r["omega0"])
+        groups.setdefault(gkey, []).append(r)
     for g in groups.values():
         g.sort(key=lambda r: r["kc"])
         for key, out in (("t_star_ms", "slope_t"), ("I_2nd", "slope_I")):
@@ -427,7 +440,7 @@ def scan(mode, mu, outdir, want_plots=True):
                 rows.append(r)
         print(f"  [S1] k_c = {kc:.3g} N/m 完成 "
               f"（{len(n0s) * len(OM_LIST)} 组 ×2 容差）")
-    add_diagnostics(rows)
+    add_diagnostics(rows, mode)
     save_csv(rows, os.path.join(outdir, "S1_kc扫描_结果表.csv"))
     if want_plots:
         nom = [r for r in rows if r["is_nominal"]]
