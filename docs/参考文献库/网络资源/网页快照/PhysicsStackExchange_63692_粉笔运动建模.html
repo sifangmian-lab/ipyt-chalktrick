@@ -1,0 +1,21 @@
+<html><head><meta charset='utf-8'><title>Modelling the movement and jumps of a chalk while drawing a dashed line on a blackboard</title></head><body><h1><a href='https://physics.stackexchange.com/questions/63692/modelling-the-movement-and-jumps-of-a-chalk-while-drawing-a-dashed-line-on-a-bla'>Modelling the movement and jumps of a chalk while drawing a dashed line on a blackboard</a></h1><p>Score 23</p><p>You probably know that if you try to draw a line using a piece of chalk on a blackboard , under some conditions (for example, $\alpha&lt;\frac{\pi}{2}$ in the picture below) you will have a dashed line pattern instead of a continuous line.</p>
+
+<p>My question is :</p>
+
+<p>(how) Can you  model this special movement of the chalk ,and specially , <strong>find the length of line segments and the distance between them</strong>(which are the <em>visible</em> characteristics of the motion)?</p>
+
+<p>Note:gravity is present. (I think it affects the solution, at least in some models)</p>
+
+<p><img src="https://i.sstatic.net/jy0C5.png" alt="the chalk"></p>
+
+<p>The pattern:</p>
+
+<p><img src="https://i.sstatic.net/8awdr.png" alt="enter image description here"></p>
+<hr><h3>Answer (score 4)</h3><p>The phenomena that you are talking about is called Stick-slip. This <a href="http://www3.geosc.psu.edu/Courses/Geosc508/Rabinowicz1956SciAm.pdf" rel="nofollow noreferrer">short paper</a> explains it in detail. To summarise it, there are two types of friction coefficients: the static co-efficient, which acts on static objects, and is what stops an object from being moved, and the kinetic coefficient, which resists moving objects. When the chalk is pressed into the board, it yields momentarily to the force (this yielding depends on different factors including <a href="https://brage.bibsys.no/xmlui/bitstream/handle/11250/183420/Nnaemeka%2C%20Uwaezuoke.pdf?sequence=1&amp;isAllowed=y" rel="nofollow noreferrer">the porosity</a> of the chalk. However, when the force applied overcomes the static coefficient, the chalk skips forward at speed. However, the adhesion between molecules in the chalk and the board means that some parts of the chalk are torn off, resulting in the mark: chalk relies on friction to make a mark. On the other hand, when it is moving, the lower kinetic coefficient means that the chalk does not make a mark. Once the chalk comes to a rest again, the process repeats itself, leaving a dotted line. </p>
+
+<p>The formula for friction is $f =\mu n$, where $\mu$ is the frictional coefficient.</p>
+
+<p>Let $F$ be the force applied to the chalk.</p>
+
+<p>The friction experienced by the chalk would be $F\sin(\alpha)\mu$, where $\mu$ is either the static or kinetic coefficient, depending on whether the chalk is moving or not. The length of the dashes would be related to factors like area of the chalk in contact with the board and the creep of the chalk, and the length of the gaps to $F-F\sin(\alpha)\mu$. In particular, the the acceleration of the chalk would be $(F-F\sin(\alpha)\mu)/M$, where $M$ is mass. </p>
+<hr><p>Source: https://physics.stackexchange.com/questions/63692/modelling-the-movement-and-jumps-of-a-chalk-while-drawing-a-dashed-line-on-a-bla</p></body></html>
