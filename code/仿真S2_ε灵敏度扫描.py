@@ -38,6 +38,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import sys
 
 import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
@@ -47,17 +48,28 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager as _fm
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from deposit_profile import deposit_profile, profile_integral, total_deposit
+
 for _p in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-           "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"):
+           "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+           r"C:\Windows\Fonts\msyh.ttc", r"C:\Windows\Fonts\msyhbd.ttc",
+           r"C:\Windows\Fonts\simhei.ttf"):
     if os.path.exists(_p):
         try:
             _fm.fontManager.addfont(_p)
         except Exception:
             pass
+plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "PingFang SC",
                                    "Noto Sans CJK SC", "Noto Sans CJK JP",
                                    "Arial Unicode MS", "DejaVu Sans"]
 plt.rcParams["axes.unicode_minus"] = False
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 # ---------------- 物理参数（与主模型一致） ----------------
 L   = 0.08
@@ -256,24 +268,23 @@ def plot_convergence(rows, outdir):
 
 
 def plot_profiles(profiles, outdir):
-    """I(ξ) 空间强度分布：折叠尖峰对 ε 的敏感性。"""
+    """I(ξ) 空间强度分布：折叠尖峰对 ε 的敏感性（统一后处理，权重 q·dt）。"""
     fig, ax = plt.subplots(1, 2, figsize=(12.5, 4.6))
     colors = plt.cm.viridis(np.linspace(0, 1, len(profiles)))
     for (eps, tr), c in zip(sorted(profiles.items()), colors):
-        xi, Nn, tt = tr["xi"], tr["Nn"], tr["tt"]
-        dxi = (xi.max() - xi.min()) / 200.0
-        if dxi <= 0:
+        xi, Nn, tt, v_rel = tr["xi"], tr["Nn"], tr["tt"], tr["v_rel"]
+        q = MU_DEFAULT * Nn * np.abs(v_rel)          # J/s，与主模型式 (11) 一致
+        xc, hist = deposit_profile(tt, q, xi=xi, nbins=200, sigma_bins=2.0)
+        if xc.size < 2:
             continue
-        edges = np.linspace(xi.min(), xi.max(), 201)
-        wts = MU_DEFAULT * Nn * np.gradient(tt)
-        hist = np.histogram(xi, bins=edges, weights=wts)[0] / dxi
-        xc = 0.5 * (edges[:-1] + edges[1:])
+        err = profile_integral(xc, hist) / total_deposit(tt, q) - 1.0
+        print(f"  [I(ξ) 守恒] ε={eps:g}: ∫I dξ/I_2nd = {1.0 + err:.4f}")
         ax[0].plot(xc * 1e3, hist, color=c, lw=1.6, label=f"ε={eps:g}")
         if np.nanmax(hist) > 0:
             ax[1].plot(xc * 1e3, hist / np.nanmax(hist), color=c, lw=1.6,
                        label=f"ε={eps:g}")
     ax[0].set_xlabel("ξ / mm（板面系坐标）"); ax[0].set_ylabel("I(ξ) / (J/m)")
-    ax[0].set_title(f"空间强度分布（k_c={KC_PROFILE:.3g}，末端折叠尖峰）")
+    ax[0].set_title(f"空间强度分布（k_c={KC_PROFILE:.3g}，折叠叠加）")
     ax[1].set_xlabel("ξ / mm"); ax[1].set_ylabel("归一化 I(ξ)")
     ax[1].set_title("归一化对比（峰位与峰形）")
     for a in ax:

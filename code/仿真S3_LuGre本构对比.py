@@ -40,6 +40,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import sys
 
 import numpy as np
 from scipy.integrate import solve_ivp, cumulative_trapezoid
@@ -49,17 +50,28 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import font_manager as _fm
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from deposit_profile import deposit_profile, profile_integral, total_deposit
+
 for _p in ("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-           "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"):
+           "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+           r"C:\Windows\Fonts\msyh.ttc", r"C:\Windows\Fonts\msyhbd.ttc",
+           r"C:\Windows\Fonts\simhei.ttf"):
     if os.path.exists(_p):
         try:
             _fm.fontManager.addfont(_p)
         except Exception:
             pass
+plt.rcParams["font.family"] = "sans-serif"
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "PingFang SC",
                                    "Noto Sans CJK SC", "Noto Sans CJK JP",
                                    "Arial Unicode MS", "DejaVu Sans"]
 plt.rcParams["axes.unicode_minus"] = False
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 # ---------------- 物理参数（与主模型一致） ----------------
 L   = 0.08
@@ -172,7 +184,9 @@ def run(model, rtol=1e-10, t_max=T_MAX, **pars):
         z = Y[2]
         g = Nn * (MU_K + (pars["mu_s"] - MU_K) * np.exp(-(v_rel / V_S) ** 2))
         F_f = np.zeros_like(v_rel)
-        ok = g > 0.0          # 分离点 Nn=0 ⇒ g=0，鬃毛项无定义，掩膜掉
+        # 分离点附近 Nn→0 ⇒ g→0，鬃毛项无定义；必须按相对接触力掩膜，
+        # 只用 g>0 会 retained 极小 g，把 z/g 与 F_f 放大到非物理量级。
+        ok = Nn > 1e-6 * N0
         zdot = np.zeros_like(v_rel)
         zdot[ok] = v_rel[ok] - pars["sigma0"] * np.abs(v_rel[ok]) * z[ok] / g[ok]
         F_f[ok] = (pars["sigma0"] * z[ok] + pars["sigma1"] * zdot[ok]
@@ -288,13 +302,10 @@ def plot_compare(rows_traj, outdir):
 def _plot_xi(ax, tr, label, ls, color):
     xi, Nn, tt = tr["xi"], tr["Nn"], tr["tt"]
     F_f, v_rel = tr["F_f"], tr["v_rel"]
-    dxi = (xi.max() - xi.min()) / 200.0
-    if dxi <= 0:
+    q = np.abs(F_f * v_rel)                       # 摩擦功率 = 沉积率（J/s）
+    xc, hist = deposit_profile(tt, q, xi=xi, nbins=200, sigma_bins=2.0)
+    if xc.size < 2:
         return
-    edges = np.linspace(xi.min(), xi.max(), 201)
-    wts = np.abs(F_f * v_rel) * np.gradient(tt)
-    hist = np.histogram(xi, bins=edges, weights=wts)[0] / dxi
-    xc = 0.5 * (edges[:-1] + edges[1:])
     ax.plot(xc * 1e3, hist, ls, color=color, lw=1.5, label=label)
 
 
