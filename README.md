@@ -13,6 +13,7 @@
 - **实验方案当前有效版本：**[虚线戏法 ChalkTrick 实验与理论建模方案（Markdown）](docs/实验指导/虚线戏法ChalkTrick实验与理论建模方案.md)（含 2026-10-25 第十节增补）；同目录 DOCX 为历史排版版。**2026-10-25 增补 DOCX/PDF：**[方案增补 DOCX](docs/实验指导/虚线戏法实验方案_2026-10-25增补.docx) / [PDF](docs/实验指导/虚线戏法实验方案_2026-10-25增补.pdf)；[模型报告更新与勘误 DOCX](docs/模型报告/粉笔_N下降段_模型更新与勘误_2026-10-25.docx) / [PDF](docs/模型报告/粉笔_N下降段_模型更新与勘误_2026-10-25.pdf)。**A2 备注：**两个增补 DOCX 已按预载修正后的数字重生成；对应 PDF 仍为 A2 前版本（本机无 Word/COM/LibreOffice），待补转。
 - **模型更新状态（2026-10-25，含 A2 修正）：**原主模型与 S1–S3 是 **v1 退化模型**（固定铰轴、轴向冻结、尖端法向罚弹簧、无真正黏着），已归档为数值基准。当前目标是 **v2：弹性杆 + 手端正交弹簧（$k_x,k_y,k_\theta$）**。A2 修正了 v2 手端 y 弹簧的预载符号，并新增刚性接触（`contact='rigid'`，LCP/事件驱动）：S4 基线 A 得到“**$N$ 平台 + 有限强度截断**”（$N$ 涨落 0.25%、$I_c/I_{\rm plateau}=1.002$）；S5b 的刚性极限给出 $t_{\rm stop}=1.550$ ms、$I_c/I_{\rm plateau}=1.000$、约束残差 $3\times10^{-13}$。罚接触与刚性极限的定量差约 7%–15%，$k_n$ 必须作为物理参数标定。
 - **P1/P2/A2 增补：**S5 收敛性、S5b 接触极限（LCP）、S6 参数平面、S7 本构对比；E3 正交柔度模块、E5 痕端测量链、E6 轮廓提取、E6A 截断判据、E7/E8 更新；关键文献待补清单；回归测试 `code/tools/check_regression.py`（含 v2 基线 + 刚性接触）。
+- **S6b 角度—摩擦平面（2026-10-25）：**`code/仿真S6b_v2角度摩擦平面.py` + `simulations/S6b_v2角度摩擦平面/` 扫描 $\theta_0=5$–$55^\circ$ × $\mu_s=0.15$–$1.0$（固定 $\mu_s/\mu_k=1.2157$），对比罚 $k_n=2\times10^4/2\times10^5/2\times10^6$ 与刚性 LCP 四种接触口径。结论：**软罚接触下不存在角度相关的黏着/脱离边界**，唯一判别边界是几乎与 $\theta_0$ 无关的低摩擦连续滑移边界 $\mu_s^*\approx0.204$–$0.215$；$N$ 平台涨落随 $\theta_0$ 增大（0.1%@5°→3.6%@55°）。$k_n=2\times10^6$ 的“脱离”区对接触阻尼 $c_n$ 敏感，刚性接触的大角度分界由初始锚定口径在 $\theta_0\approx35.3^\circ$ 的近奇异支配，**均不能当物理相边界**。板速扫描给出 $\mu_s^*\approx0.204$（$v=0.5$）、约 0.07（$v=0.2$）、约 0.02–0.03（$v=0.1$），且低板速首停后普遍再滑。补充稳健性见 `code/仿真S6b_稳健性补充.py`；详见 [S6b 结果说明](simulations/S6b_v2角度摩擦平面/结果说明.md)。
 - **数值后处理修正：**主模型/ S2 的 $I(\xi)$ 直方图权重曾误用 $q\cdot|d\xi|$ 与 $\mu N\,dt$，已统一为 `code/deposit_profile.py`（权重 $q\,dt$，满足 $\int I\,d\xi=I_{2\mathrm{nd}}$）；S2/S3 强度图与结果说明已更新，主模型报告需配读 [勘误](docs/模型报告/粉笔_N下降段_报告勘误_2026-10-25.md)。
 - **内部链接约定：**`code/deposit_profile.py` 是空间强度 $I(\xi)$ 的唯一后处理入口；`code/v2_model.py` 是 v2 仿真共享内核；`docs/研究记录/模型v2规格_2026-10-25.md` 是当前模型规格草案。
 - **运行环境：**S1–S7 依赖 NumPy、SciPy、Matplotlib；仓库记录环境为 Anaconda Python 3.14（numpy 2.4.6 / scipy 1.18.0 / matplotlib 3.11.0）。2026-10-25 A2 复算在系统 Python 3.10.11（numpy 2.2.6 / scipy 1.15.3 / matplotlib 3.10.9）完成，回归全部通过；中文字体已加入 Windows 字体回退（msyh/simhei）。
@@ -28,9 +29,9 @@
 │   ├── 研究记录/            # 交接、评审、参数—证据总表、v2 规格、E7/E8 更新
 │   ├── 实验指导/            # 方案 Markdown/DOCX、E3/E5/E6/E6A 规程与增补 PDF
 │   └── 模型报告/            # N 下降段报告（PDF）+ 2026-10-25 勘误/增补
-├── code/                    # 主模型、v2_model 内核（含刚性接触）、deposit_profile、S1–S7+S5b 源码
+├── code/                    # 主模型、v2_model 内核（含刚性接触）、deposit_profile、S1–S7+S5b+S6b 源码
 │   └── tools/               # 回归测试、文档生成、LaTeX 公式、字体/PDF 工具
-├── simulations/             # S1–S7 + S5b：v1 基准、v2 基线/收敛性/接触极限/参数平面/本构对比
+├── simulations/             # S1–S7 + S5b + S6b：v1 基准、v2 基线/收敛性/接触极限/参数平面/本构对比/角度—摩擦平面
 │                            # 各目录含 CSV、结果图与结果说明.md
 ├── figures/                 # 结果图、公式图与过程预览图
 └── assets/fonts/            # 报告用字体（思源宋/黑体子集）
@@ -48,8 +49,8 @@
 ## 运行与复现说明
 
 - `code/粉笔_N下降段_完整模型.py` 仍含 `/mnt/agents/output/` 绝对路径，运行前请改为本地路径；`code/划痕相对强度_时空依赖.py` 已改为项目相对路径，输出到 `figures/结果图/`。
-- S1–S7 与 S5b 依赖 NumPy、SciPy、Matplotlib，输出 CSV/PNG；S2–S7 支持 `--outdir`，S4–S7 另有 `--tmax`；S5b 用 `contact='rigid'` 调刚性接触。`code/deposit_profile.py` 可独立运行自检；`code/v2_model.py` 是 v2 共享内核（罚接触默认，`contact='rigid'` 为 LCP/事件驱动极限）。
-- **回归测试：**`python code/tools/check_regression.py` 检查 v1 名义 $t^*$/$I_{2\mathrm{nd}}$、v2 基线（预载修正后 $N$ 涨落 <2%、$I_c/I_p>0.95$、$t_{\rm stop}\approx1.816$ ms）、v2 刚性接触（$t_{\rm stop}\approx1.550$ ms、约束残差 <1e-9、无释放）与 $I(\xi)$ 守恒；当前全部通过。
+- S1–S7、S5b 与 S6b 依赖 NumPy、SciPy、Matplotlib，输出 CSV/PNG；S2–S7 支持 `--outdir`，S4–S7 另有 `--tmax`；S5b 用 `contact='rigid'` 调刚性接触。S6b 另有 `--tmax-penalty`、`--tmax-rigid`、`--no-bisect`（跳过边界二分，仅出图）；其稳健性补充用 `code/仿真S6b_稳健性补充.py`。`code/deposit_profile.py` 可独立运行自检；`code/v2_model.py` 是 v2 共享内核（罚接触默认，`contact='rigid'` 为 LCP/事件驱动极限）。
+- **回归测试：**`python code/tools/check_regression.py` 检查 v1 名义 $t^*$/$I_{2\mathrm{nd}}$、v2 基线（预载修正后 $N$ 涨落 <2%、$I_c/I_p>0.95$、$t_{\rm stop}\approx1.816$ ms）、v2 刚性接触（$t_{\rm stop}\approx1.550$ ms、约束残差 <1e-9、无释放）、v2 S6b 角度—摩擦断言（$\mu_s=0.20$ 连续滑移 / $0.22$ 停止、$k_n=2\times10^6$ 的脱离与未脱离对照、刚性大角度脱离与颤振）与 $I(\xi)$ 守恒；当前全部通过。
 - **增补 DOCX/PDF 生成：**`python code/tools/build_update_docs.py`（需要 python-docx）；PDF 可由 Word/COM 转换。
 - 修改数值模型后，至少检查分离事件方向、接触掩膜、初始内态、积分容差、网格/分箱敏感性和输出单位；空间强度必须满足 $\int I\,d\xi=I_{2\mathrm{nd}}$，不要用 `q*|dξ|` 或 `μN*dt` 代替统一后处理。
 - `code/tools/render_latex_eqs.py` 依赖外部 LaTeX；`build_pdf.py` 依赖 ReportLab、Pillow 与 `assets/fonts/` 中的字体。

@@ -1,0 +1,22 @@
+﻿kind,model,boundary_var,boundary_value,theta0_deg,mu_s,bracket_lo,bracket_hi,pred_lo,pred_hi,note
+entrainment,penalty_2e4,mu_s,0.21365234375,10.0,,0.1,0.32,0,1,pred=stop: slide(False)->stop(True); tmax=25ms
+entrainment,penalty_2e4,mu_s,0.20419921875000005,20.0,,0.1,0.32,0,1,pred=stop: slide(False)->stop(True); tmax=25ms
+entrainment,penalty_2e4,mu_s,0.20419921875000005,30.0,,0.1,0.32,0,1,pred=stop: slide(False)->stop(True); tmax=25ms
+entrainment,penalty_2e4,mu_s,0.20763671875000003,40.0,,0.1,0.32,0,1,pred=stop: slide(False)->stop(True); tmax=25ms
+entrainment,penalty_2e4,mu_s,0.21494140625,50.0,,0.1,0.32,0,1,pred=stop: slide(False)->stop(True); tmax=25ms
+liftoff,penalty_2e5,mu_s,,20.0,,0.15,1.0,0,0,mu_s<=1.0 内无脱离
+liftoff,penalty_2e5,mu_s,,25.0,,0.15,1.0,0,0,mu_s<=1.0 内无脱离
+liftoff,penalty_2e5,mu_s,,30.0,,0.15,1.0,0,0,mu_s<=1.0 内无脱离
+liftoff,penalty_2e5,mu_s,,35.0,,0.15,1.0,0,0,mu_s<=1.0 内无脱离
+liftoff,penalty_2e5,mu_s,,40.0,,0.15,1.0,0,0,mu_s<=1.0 内无脱离
+liftoff,penalty_2e6,mu_s,0.5747233072916667,20.0,,0.15,0.6222222222222222,1,0,pred=lift: lift(True)->no-lift(False)
+liftoff,penalty_2e6,mu_s,0.7846408420138888,25.0,,0.15,0.8111111111111111,1,0,pred=lift: lift(True)->no-lift(False)
+liftoff,penalty_2e6,mu_s,0.969287109375,30.0,,0.15,1.0,1,0,pred=lift: lift(True)->no-lift(False)
+liftoff,penalty_2e6,mu_s,,35.0,,0.15,1.0,1,1,mu_s<=1.0 仍有脱离（未闭合）
+liftoff,penalty_2e6,mu_s,,40.0,,0.15,1.0,1,1,mu_s<=1.0 仍有脱离（未闭合）
+rigid_liftoff,rigid,theta0_deg,35.263671875,,0.2,20.0,50.0,0,1,mu_s 固定；pred=lift。注意刚性初值的 N0 锚定口径
+rigid_sprag_onset,rigid,theta0_deg,31.5517578125,,0.2,24.0,35.0,0,1,mu_s 固定；pred=sprag(早停)
+rigid_liftoff,rigid,theta0_deg,35.263671875,,0.62,20.0,50.0,0,1,mu_s 固定；pred=lift。注意刚性初值的 N0 锚定口径
+rigid_sprag_onset,rigid,theta0_deg,32.4326171875,,0.62,24.0,35.0,0,1,mu_s 固定；pred=sprag(早停)
+rigid_liftoff,rigid,theta0_deg,35.263671875,,1.0,20.0,50.0,0,1,mu_s 固定；pred=lift。注意刚性初值的 N0 锚定口径
+rigid_sprag_onset,rigid,theta0_deg,33.3564453125,,1.0,24.0,35.0,0,1,mu_s 固定；pred=sprag(早停)
