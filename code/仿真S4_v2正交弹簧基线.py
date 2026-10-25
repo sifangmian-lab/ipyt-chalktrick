@@ -124,7 +124,7 @@ def main():
         writer.writeheader()
         writer.writerows(rows)
     print(f"\n输出目录：{os.path.abspath(args.outdir)}")
-    print("说明：基线 A/B 用 v=0.5 m/s 直接对照 v1 名义；C 用 0.05 m/s 看低速。")
+    print("说明：基线 A/B 用 v=0.5 m/s 直接对照 v1 名义；C 用 0.1 m/s 看低速。")
 
 
 if __name__ == "__main__":

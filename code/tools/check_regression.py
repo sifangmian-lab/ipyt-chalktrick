@@ -7,7 +7,9 @@
 
 基准值来源：
   · v1 名义工况：t* = 1.292 ms, I_2nd = 1.75e-4 J（模型报告/本次复算）
-  · v2 基线 A：N 平台、I_c/I_plateau > 0.8、∫I dξ/I_2nd ≈ 1（S4 结果说明）
+  · v2 基线 A（2026-10-25 A2 预载修正后）：N 涨落 0.25%、I_c/I_plateau ≈ 1.002、
+    ∫I dξ/I_2nd ≈ 1、ξ_end ≈ 0.442 mm
+  · v2 刚性接触（LCP 极限）：t_stop ≈ 1.550 ms、约束残差 <1e-9、N(0)=N0
 """
 from __future__ import annotations
 
@@ -82,28 +84,55 @@ def test_v1_nominal():
           f"{I2:.4e} J")
 
 
-# ---------------- 3. v2 基线回归 ----------------
+# ---------------- 3. v2 基线回归（2026-10-25 A2 预载修正） ----------------
 def test_v2_baseline():
     p = dict(vm.DEFAULT, friction="lugre_springslider", sigma1=0.0, sigma2=0.0)
     info, tr = vm.simulate(p, t_max=0.004)
     xc, I, met = vm.dash_profile(tr, nbins=120, sigma_bins=1.0)
-    check("v2 基线：N 平台（相对涨落 <10%）", info["N_rel_std"] < 0.10,
-          f"Nrel={info['N_rel_std']*100:.1f}%")
-    check("v2 基线：有限强度截断（I_c/I_p > 0.8）",
-          met["cutoff_ratio"] > 0.8, f"Ic/Ip={met['cutoff_ratio']:.3f}")
-    check("v2 基线：强度守恒", abs(met["I_conservation"] - 1.0) < 0.01,
-          f"∫/I2={met['I_conservation']:.4f}")
-    check("v2 基线：划痕长度量级 0.2–0.8 mm",
-          0.2 < info["xi_end_mm"] < 0.8, f"ξ={info['xi_end_mm']:.3f} mm")
+    check("v2 基线：N 平台（相对涨落 <2%）", info["N_rel_std"] < 0.02,
+          f"Nrel={info['N_rel_std']*100:.2f}%")
+    check("v2 基线：有限强度截断（I_c/I_p > 0.95）",
+          met["cutoff_ratio"] > 0.95, f"Ic/Ip={met['cutoff_ratio']:.3f}")
+    check("v2 基线：强度守恒", abs(met["I_conservation"] - 1.0) < 1e-3,
+          f"∫/I2={met['I_conservation']:.5f}")
+    check("v2 基线：划痕长度 0.40–0.50 mm",
+          0.40 < info["xi_end_mm"] < 0.50, f"ξ={info['xi_end_mm']:.3f} mm")
+    check("v2 基线：t_stop ≈ 1.816 ms",
+          abs(info["t_stop_ms"] - 1.816) < 0.005,
+          f"t_stop={info['t_stop_ms']:.4f} ms")
+
+
+# ---------------- 4. v2 刚性接触（LCP 极限）回归 ----------------
+def test_v2_rigid():
+    p = dict(vm.DEFAULT, contact="rigid")
+    info, tr = vm.simulate(p, t_max=0.004)
+    xc, I, met = vm.dash_profile(tr, nbins=120, sigma_bins=1.0)
+    check("刚性接触：初始 N(0)=N0", abs(info["n0_check"] - p["n0"]) < 1e-6,
+          f"N(0)={info['n0_check']:.6f} N")
+    check("刚性接触：约束加速度残差 <1e-9",
+          info["constraint_residual_max"] < 1e-9,
+          f"max|Cdd|={info['constraint_residual_max']:.1e}")
+    check("刚性接触：无释放事件（基线）", info["release_events"] == 0,
+          f"events={info['release_events']}")
+    check("刚性接触：N ≥ 0", info["N_min"] >= 0.0,
+          f"Nmin={info['N_min']:.3f} N")
+    check("刚性接触：t_stop ≈ 1.550 ms",
+          abs(info["t_stop_ms"] - 1.550) < 0.005,
+          f"t_stop={info['t_stop_ms']:.4f} ms")
+    check("刚性接触：平台+截断（I_c/I_p > 0.95）",
+          met["cutoff_ratio"] > 0.95, f"Ic/Ip={met['cutoff_ratio']:.3f}")
+    check("刚性接触：强度守恒", abs(met["I_conservation"] - 1.0) < 1e-3,
+          f"∫/I2={met['I_conservation']:.5f}")
 
 
 if __name__ == "__main__":
     print("=" * 68)
-    print("回归测试：v1 基准 / v2 基线 / I(ξ) 后处理")
+    print("回归测试：v1 基准 / v2 基线 / v2 刚性接触 / I(ξ) 后处理")
     print("=" * 68)
     test_deposit_profile()
     test_v1_nominal()
     test_v2_baseline()
+    test_v2_rigid()
     print("-" * 68)
     if FAIL:
         print(f"结果：{len(FAIL)} 项失败 -> {FAIL}")
