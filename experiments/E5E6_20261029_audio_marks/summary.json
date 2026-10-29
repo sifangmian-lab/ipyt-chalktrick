@@ -1,0 +1,391 @@
+{
+  "date": "2026-10-29",
+  "pairing": {
+    "29": "photo1",
+    "30": "photo2"
+  },
+  "direction": "left_to_right",
+  "pixel_coordinates": "resized width=1824",
+  "sound_to_mark_alignment": "not established",
+  "measurement_class": "exploratory; freehand speed and load confounded",
+  "sources": {
+    "audio29": {
+      "filename": "标准录音 29.mp3",
+      "sha256": "3d3f7791058afc3e82469a0cdadf63d5ab9011bac66ec2fc8dfd69bc0932bc15"
+    },
+    "audio30": {
+      "filename": "标准录音 30.mp3",
+      "sha256": "26972b18aa46e7cd4779052e55d40e0b1e49e622e812315df2e400026c06dbd3"
+    },
+    "photo1": {
+      "filename": "d2a6526bb6f1086368877baa030f4871.jpg",
+      "sha256": "dedcee78a4fae4def6e991082893a007790a5b55a9a4ea4d97cf5359fd188953"
+    },
+    "photo2": {
+      "filename": "6bdf24127abb42523c34b0b10f273987.jpg",
+      "sha256": "682bb1cdb599d7aef7fe6683cbf519971bbe255b5bb364f96efa4c6a787d7a4c"
+    }
+  },
+  "audio": {
+    "29": {
+      "n_pulses": 24,
+      "median_interval_ms": 19.750000000000046,
+      "reciprocal_median_hz": 50.63291139240495,
+      "interval_q10_q90_ms": [
+        18.999999999999925,
+        20.750000000000025
+      ],
+      "decoded_duration_s": 1.872,
+      "activity_window_s": [
+        0.22,
+        1.28
+      ],
+      "core_window_s": [
+        0.6,
+        1.08
+      ],
+      "activity_candidate_pulses": 56,
+      "effective_timing_grid_ms": 0.25,
+      "confidence_interval": "not estimated; quantiles describe within-run variation",
+      "sensitivity": [
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 25,
+          "median_interval_ms": 19.74999999999999,
+          "reciprocal_median_hz": 50.63291139240509,
+          "interval_q10_q90_ms": [
+            19.000000000000018,
+            20.75000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 25,
+          "median_interval_ms": 19.74999999999999,
+          "reciprocal_median_hz": 50.63291139240509,
+          "interval_q10_q90_ms": [
+            19.000000000000018,
+            20.75000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 24,
+          "median_interval_ms": 19.749999999999936,
+          "reciprocal_median_hz": 50.632911392405234,
+          "interval_q10_q90_ms": [
+            19.000000000000018,
+            20.69999999999996
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 24,
+          "median_interval_ms": 19.750000000000046,
+          "reciprocal_median_hz": 50.63291139240495,
+          "interval_q10_q90_ms": [
+            18.999999999999925,
+            20.750000000000025
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 24,
+          "median_interval_ms": 19.750000000000046,
+          "reciprocal_median_hz": 50.63291139240495,
+          "interval_q10_q90_ms": [
+            18.999999999999925,
+            20.750000000000025
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 24,
+          "median_interval_ms": 19.750000000000046,
+          "reciprocal_median_hz": 50.63291139240495,
+          "interval_q10_q90_ms": [
+            18.999999999999925,
+            20.750000000000025
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 25,
+          "median_interval_ms": 19.74999999999999,
+          "reciprocal_median_hz": 50.63291139240509,
+          "interval_q10_q90_ms": [
+            18.825000000000003,
+            20.75000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 25,
+          "median_interval_ms": 19.74999999999999,
+          "reciprocal_median_hz": 50.63291139240509,
+          "interval_q10_q90_ms": [
+            18.825000000000003,
+            20.75000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 25,
+          "median_interval_ms": 19.74999999999999,
+          "reciprocal_median_hz": 50.63291139240509,
+          "interval_q10_q90_ms": [
+            18.825000000000003,
+            20.75000000000001
+          ]
+        }
+      ]
+    },
+    "30": {
+      "n_pulses": 19,
+      "median_interval_ms": 9.749999999999925,
+      "reciprocal_median_hz": 102.56410256410335,
+      "interval_q10_q90_ms": [
+        8.599999999999941,
+        10.90000000000002
+      ],
+      "decoded_duration_s": 2.784,
+      "activity_window_s": [
+        0.63,
+        0.96
+      ],
+      "core_window_s": [
+        0.73,
+        0.92
+      ],
+      "activity_candidate_pulses": 29,
+      "effective_timing_grid_ms": 0.25,
+      "confidence_interval": "not estimated; quantiles describe within-run variation",
+      "sensitivity": [
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 19,
+          "median_interval_ms": 9.874999999999911,
+          "reciprocal_median_hz": 101.26582278481104,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            11.075000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 19,
+          "median_interval_ms": 9.874999999999911,
+          "reciprocal_median_hz": 101.26582278481104,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            11.075000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            600,
+            14000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 19,
+          "median_interval_ms": 9.874999999999911,
+          "reciprocal_median_hz": 101.26582278481104,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            11.075000000000001
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 19,
+          "median_interval_ms": 9.749999999999925,
+          "reciprocal_median_hz": 102.56410256410335,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            10.90000000000002
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 19,
+          "median_interval_ms": 9.749999999999925,
+          "reciprocal_median_hz": 102.56410256410335,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            10.90000000000002
+          ]
+        },
+        {
+          "band_hz": [
+            1200,
+            12000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 19,
+          "median_interval_ms": 9.749999999999925,
+          "reciprocal_median_hz": 102.56410256410335,
+          "interval_q10_q90_ms": [
+            8.599999999999941,
+            10.90000000000002
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.18,
+          "n_pulses": 19,
+          "median_interval_ms": 9.74999999999998,
+          "reciprocal_median_hz": 102.56410256410277,
+          "interval_q10_q90_ms": [
+            8.249999999999979,
+            11.324999999999974
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.22,
+          "n_pulses": 19,
+          "median_interval_ms": 9.74999999999998,
+          "reciprocal_median_hz": 102.56410256410277,
+          "interval_q10_q90_ms": [
+            8.249999999999979,
+            11.324999999999974
+          ]
+        },
+        {
+          "band_hz": [
+            2000,
+            10000
+          ],
+          "prominence": 0.28,
+          "n_pulses": 19,
+          "median_interval_ms": 9.74999999999998,
+          "reciprocal_median_hz": 102.56410256410277,
+          "interval_q10_q90_ms": [
+            8.249999999999979,
+            11.324999999999974
+          ]
+        }
+      ]
+    }
+  },
+  "photo": {
+    "1": {
+      "original_size": [
+        4096,
+        3072
+      ],
+      "candidate_segments": 54,
+      "interior_geometry_segments": 53,
+      "threshold": 24,
+      "centerline_x": [
+        150,
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1800
+      ],
+      "centerline_y": [
+        693,
+        678,
+        646,
+        619,
+        614,
+        605,
+        614
+      ],
+      "accepted_center_max_px": 1805,
+      "physical_scale": "unknown; do not compare pixels across photos",
+      "total_mark_count": "not certified; clipped/overlapping end marks"
+    },
+    "2": {
+      "original_size": [
+        4096,
+        3072
+      ],
+      "candidate_segments": 24,
+      "interior_geometry_segments": 22,
+      "threshold": 25,
+      "centerline_x": [
+        0,
+        300,
+        600,
+        900,
+        1200,
+        1500,
+        1700
+      ],
+      "centerline_y": [
+        606,
+        595,
+        604,
+        611,
+        609,
+        604,
+        607
+      ],
+      "accepted_center_max_px": 1590,
+      "physical_scale": "unknown; do not compare pixels across photos",
+      "total_mark_count": "not certified; clipped/overlapping end marks"
+    }
+  }
+}
