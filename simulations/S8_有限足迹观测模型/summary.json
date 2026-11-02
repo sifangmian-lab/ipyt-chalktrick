@@ -1,0 +1,121 @@
+{
+  "geometry_scenario": {
+    "half_height_px": 27,
+    "sigma_x_px": 1.5,
+    "tilt_dx_dy": 0.31
+  },
+  "psf_sigma_px": 0.7,
+  "source_span_scenarios_px": [
+    2.0,
+    4.0,
+    8.0,
+    16.0
+  ],
+  "max_mass_conservation_error": 4.440892098500626e-16,
+  "comparison_fit": "positive scalar gain and x translation only, x in [-30,30]",
+  "calibration_status": "pixel scale, footprint and camera uncalibrated; NOT a force inverse fit",
+  "geometry_provenance": "height and tilt suggested by observed mark44 footprint; sigma/PSF chosen",
+  "comparison_status": "44 is exploratory self-comparison; 51 shares fixed geometry but is not independent physical validation",
+  "viscous_simulation_parameters": {
+    "n0": 4.0,
+    "theta0_deg": 20.0,
+    "kx": 300.0,
+    "ky": 1000000.0,
+    "ktheta": 1000.0,
+    "cx": 0.0,
+    "cy": 0.0,
+    "kn": 20000.0,
+    "cn": 1.0,
+    "friction": "lugre",
+    "mu_s": 0.62,
+    "mu_k": 0.51,
+    "vs": 0.01,
+    "eps_tanh": 0.02,
+    "sigma0": 100000.0,
+    "sigma1": 30.0,
+    "sigma2": 5.0,
+    "v_board": 0.5
+  },
+  "viscous_source_metrics": {
+    "n_bins": 120,
+    "I2": 0.0008896046922275199,
+    "I_conservation": 0.9999751753913279,
+    "I_plateau": 3.7012572362437135,
+    "I_c": 2.389999617895183,
+    "cutoff_ratio": 0.6457264289797692,
+    "xi_c_mm": 0.24683504565988224,
+    "I_max": 4.645767380512839
+  },
+  "distinctions": [
+    {
+      "source_span_px": 2.0,
+      "relative_L2_between_peak_normalized_profiles": 0.01397243723537068
+    },
+    {
+      "source_span_px": 16.0,
+      "relative_L2_between_peak_normalized_profiles": 0.09225829957273882
+    }
+  ],
+  "fixed_span4_scores": [
+    {
+      "source": "spring-slider",
+      "footprint": "point",
+      "source_span_px": 4.0,
+      "mark": 44,
+      "x_shift_px": 2.5,
+      "brightness_gain": 19164.201477173625,
+      "nrmse": 0.21075645252059244,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    },
+    {
+      "source": "spring-slider",
+      "footprint": "point",
+      "source_span_px": 4.0,
+      "mark": 51,
+      "x_shift_px": 4.5,
+      "brightness_gain": 23509.938357214032,
+      "nrmse": 0.30194129760369814,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    },
+    {
+      "source": "spring-slider",
+      "footprint": "upright",
+      "source_span_px": 4.0,
+      "mark": 44,
+      "x_shift_px": 2.25,
+      "brightness_gain": 24112.258204503316,
+      "nrmse": 0.18574002008824056,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    },
+    {
+      "source": "spring-slider",
+      "footprint": "upright",
+      "source_span_px": 4.0,
+      "mark": 51,
+      "x_shift_px": 4.5,
+      "brightness_gain": 31046.20317637396,
+      "nrmse": 0.26523007705629337,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    },
+    {
+      "source": "spring-slider",
+      "footprint": "tilted",
+      "source_span_px": 4.0,
+      "mark": 44,
+      "x_shift_px": 0.5,
+      "brightness_gain": 41836.99744902047,
+      "nrmse": 0.10689918318634528,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    },
+    {
+      "source": "spring-slider",
+      "footprint": "tilted",
+      "source_span_px": 4.0,
+      "mark": 51,
+      "x_shift_px": 2.25,
+      "brightness_gain": 55171.58349659327,
+      "nrmse": 0.1779511670528258,
+      "model_total_proxy_before_unit_normalization": 0.00089743329000759
+    }
+  ]
+}
