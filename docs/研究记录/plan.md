@@ -1,4 +1,8 @@
-# Plan: 《粉笔虚线现象（Chalk Trick / Stick-Slip）文献综述》
+# 研究计划入口与历史文献综述计划
+
+> **当前研究计划（2026-11-02）：**[粉笔虚线现象研究计划](研究计划_2026-11-02.md)。依据v1/v2、S4v1、S8及首批实测数据重写，按“测量补齐—参数标定—完整周期—独立验证”推进。以下内容为早期文献综述任务的历史记录，不再作为当前待办。
+
+## 历史计划：《粉笔虚线现象（Chalk Trick / Stick-Slip）文献综述》
 
 ## 背景
 源文件：/mnt/agents/upload/2903.pdf —— "The Chalk Trick Pre-selection Report"（IYPT 风格报告）。
