@@ -1,82 +1,126 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 680, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "实验体系：E1–E8 流水线"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
+      style: "$pageTitle"
+      wrap: false
+      text: 实验体系按「标定 → 复现 → 计量 → 反演 → 普遍性」组织，E1 手册已交付
+  - elementId: n1
+    elementType: text
+    bounds: [26, 92, 158, 190]
     content:
-      text: "10 / 13"
-      style: $cite
-      align: [right, top]
-  - type: text
-    bounds: [48, 92, 168, 96]
-    content:
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.4
       text: |
-        <p><strong>E1–E3 标定</strong></p>
-        <p style="margin-top:4px;color:$soft">E1 斜面静摩擦 · E2 动态辨识 · E3 正交柔度模块</p>
-      style: $body
-      fontSize: 12
-  - type: line
-    bounds: [224, 128, 48, 0]
-    border: {style: solid, width: 1.5, color: "$blue"}
-  - type: text
-    bounds: [280, 92, 168, 96]
+        <p><span style="font-size:17px; color:$primary"><strong>E1–E3</strong></span></p>
+        <p style="margin-top:4px"><span style="font-size:13.5px; color:$ink"><strong>标定期（可并行）</strong></span></p>
+        <p style="margin-top:6px"><span style="font-size:11.5px; color:$soft">E1 静摩擦及时间依赖：μₛ=tanθc，对数蠕变律，8 档静置时间</span></p>
+        <p style="margin-top:4px"><span style="font-size:11.5px; color:$soft">E2 动摩擦 μk(v)</span></p>
+        <p style="margin-top:4px"><span style="font-size:11.5px; color:$soft">E3 弹性臂刚度 k 与阻尼 ζ</span></p>
+  - elementId: arw1
+    elementType: line
+    bounds: [190, 120, 26, 12]
+    viewBox: [26, 12]
+    points: "0,6 26,6"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: n2
+    elementType: text
+    bounds: [222, 92, 158, 190]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.4
       text: |
-        <p><strong>E4 主装置</strong></p>
-        <p style="margin-top:4px;color:$soft">枢纽：恒速板 + 力/位移同步采集（E5 三通道）</p>
-      style: $body
-      fontSize: 12
-  - type: line
-    bounds: [456, 128, 48, 0]
-    border: {style: solid, width: 1.5, color: "$blue"}
-  - type: text
-    bounds: [512, 92, 168, 96]
+        <p><span style="font-size:17px; color:$primary"><strong>E4</strong></span></p>
+        <p style="margin-top:4px"><span style="font-size:13.5px; color:$ink"><strong>主装置·全项目枢纽</strong></span></p>
+        <p style="margin-top:6px"><span style="font-size:11.5px; color:$soft">扫 (α, v, R) 相图复现虚线</span></p>
+        <p style="margin-top:4px"><span style="font-size:11.5px; color:$soft">E5 力 / 声学 / 视频三通道同步测粘滑周期</span></p>
+  - elementId: arw2
+    elementType: line
+    bounds: [386, 120, 26, 12]
+    viewBox: [26, 12]
+    points: "0,6 26,6"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: n3
+    elementType: text
+    bounds: [418, 92, 158, 190]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.4
       text: |
-        <p><strong>E6 痕迹计量</strong></p>
-        <p style="margin-top:4px;color:$soft">逐痕 p / s / g / w 与 I(ξ) 轮廓提取</p>
-      style: $body
-      fontSize: 12
-  - type: line
-    bounds: [688, 128, 48, 0]
-    border: {style: solid, width: 1.5, color: "$blue"}
-  - type: text
-    bounds: [744, 92, 168, 96]
+        <p><span style="font-size:17px; color:$primary"><strong>E6</strong></span></p>
+        <p style="margin-top:4px"><span style="font-size:13.5px; color:$ink"><strong>痕迹图像计量</strong></span></p>
+        <p style="margin-top:6px"><span style="font-size:11.5px; color:$soft">虚线四参数 p / s / g / w 的图像测量与不确定度</span></p>
+  - elementId: arw3
+    elementType: line
+    bounds: [582, 120, 26, 12]
+    viewBox: [26, 12]
+    points: "0,6 26,6"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: n4
+    elementType: text
+    bounds: [614, 92, 158, 190]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.4
       text: |
-        <p><strong>E7 盲反演</strong></p>
-        <p style="margin-top:4px;color:$soft">由实测 I(ξ) 反推 (μ, k_c, N₀, v)</p>
-      style: $body
-      fontSize: 12
-  - type: line
-    bounds: [400, 208, 48, 24]
-    border: {style: solid, width: 1.5, color: "$blue"}
-  - type: text
-    bounds: [280, 232, 400, 56]
+        <p><span style="font-size:17px; color:$primary"><strong>E7</strong></span></p>
+        <p style="margin-top:4px"><span style="font-size:13.5px; color:$ink"><strong>盲反演检验</strong></span></p>
+        <p style="margin-top:6px"><span style="font-size:11.5px; color:$soft">由痕迹反推交接参数，检验模型自洽性</span></p>
+  - elementId: arw4
+    elementType: line
+    bounds: [778, 120, 26, 12]
+    viewBox: [26, 12]
+    points: "0,6 26,6"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: n5
+    elementType: text
+    bounds: [810, 92, 124, 190]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.4
       text: |
-        <p><strong>E8 普遍性矩阵</strong>　4 笔 × 4 板全参数矩阵，验证相图可迁移性</p>
-      style: $body
-      fontSize: 12.5
-      align: [center, top]
-  - type: shape
-    bounds: [48, 316, 864, 118]
-    shape: rect
+        <p><span style="font-size:17px; color:$primary"><strong>E8</strong></span></p>
+        <p style="margin-top:4px"><span style="font-size:13.5px; color:$ink"><strong>普遍性矩阵</strong></span></p>
+        <p style="margin-top:6px"><span style="font-size:11.5px; color:$soft">粉笔 / 铅笔 / 蜡笔 / 马克笔 × 黑板 / 玻璃 / 白板 / 纸</span></p>
+  - elementId: accbg
+    elementType: shape
+    bounds: [26, 316, 908, 76]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [68, 330, 824, 92]
+  - elementId: acc
+    elementType: text
+    bounds: [42, 328, 876, 52]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>阶段验收硬指标</strong>　E1：RSD ≤ 5% 且与文献 μ 值同量级 · B 组盲反演偏差落在声明不确定度内 · ε / v 无量纲对照组闭合</p>
-        <p style="margin-top:8px"><strong>已交付</strong>　搭建指导（预算 ¥250、两周日程）+ E1 手册 + 采购清单（14 项必买 + 验收 10 项）</p>
-        <p style="margin-top:8px"><strong>欠账</strong>　E3 口径未同步新候选子模型；E5 三通道同步待定传感器</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [48, 456, 864, 40]
+        <p><strong>阶段验收硬指标</strong>　E1 相对标准差 ≤ 5%；B 组盲反演参数与真实值偏差落在声明不确定度内。</p>
+        <p><span style="font-size:12.5px; color:$soft">仿真名义速度 0.5 m/s 与主装置 0.01–0.20 m/s 不匹配，实验一律按 ε/v 等无量纲量组织对照。</span></p>
+  - elementId: deliv
+    elementType: text
+    bounds: [26, 412, 908, 56]
     content:
-      text: "E1 原始数据已入库（2026-10-29 斜面静摩擦记录）；E2–E8 尚无实测数据，相图与盲反演仍是计划态。"
-      style: $caption
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
+      text: |
+        <p><strong>已交付</strong>　《第一阶段实验详解与搭建指导》（采购表约 ¥250、两周日程）＋《实验 E1 指导手册》，见 docs/实验指导/。</p>
+        <p><span style="font-size:12.5px; color:$soft">欠账：方案 docx 与第一阶段 PDF 的 E3 口径未同步新候选子模型（固定铰轴 vs 自由轴），待修订。</span></p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
+    content:
+      style: "$cite"
+      wrap: false
+      text: 实验体系与硬指标：docs/实验指导/虚线戏法ChalkTrick实验与理论建模方案.docx · 2026-10-24 研究进度评审（docs/研究记录/）

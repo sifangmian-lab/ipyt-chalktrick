@@ -1,3 +1,4 @@
+pageType: cover
 background:
   type: gradient
   gradientType: linear
@@ -7,81 +8,136 @@ background:
     - {position: 0.55, color: "#DBEDFE"}
     - {position: 1, color: "#DEF8E9"}
 elements:
-  - type: text
-    bounds: [64, 46, 560, 24]
+  - elementId: kicker
+    elementType: text
+    bounds: [64, 44, 520, 18]
     content:
-      text: "IPT 2023 · stick-slip · 粉笔—黑板断续虚线"
-      style: $small
-      letterSpacing: 2
-  - type: text
-    bounds: [64, 92, 620, 140]
+      style: "$small"
+      fontSize: 12
+      letterSpacing: 3
+      color: "$soft"
+      wrap: false
+      text: IPYT · CHALKTRICK — 研究进展汇报
+  - elementId: title
+    elementType: text
+    bounds: [64, 100, 540, 150]
     content:
+      fontSize: 45
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.18
       text: |
         <p>粉笔虚线（ChalkTrick）</p>
         <p><span style="color:$primary">研究进展汇报</span></p>
-      style: $pageTitle
-      fontSize: 45
-      lineHeight: 1.25
-  - type: text
-    bounds: [64, 246, 560, 52]
+  - elementId: subtitle
+    elementType: text
+    bounds: [64, 268, 520, 58]
     content:
-      text: "从 IPT 赛题到第一阶段模型与实验体系：四周进展、评审结论与下一步"
-      style: $body
-      color: "$soft"
-  - type: line
-    bounds: [64, 322, 208, 0]
-    border: {style: solid, width: 1.5, color: "$ink"}
-  - type: text
-    bounds: [64, 342, 560, 78]
-    content:
+      style: "$body"
+      fontSize: 15
       text: |
-        <p>池亦天 · 物理学院</p>
-        <p>2026-11-02 · 仓库 sifangmian-lab/ipyt-chalktrick</p>
-        <p style="margin-top:6px"><span style="color:$blue">develop 分支 · 基于 2026-10-24 评审与 2026-10-27 S4v1 归档</span></p>
-      style: $body
-      fontSize: 13.5
-  - type: shape
-    bounds: [640, 92, 256, 340]
-    shape: rect
+        <p>一句话：四周建成文献—模型—实验三线闭环的可复现仓库；第一阶段单周期模型给出可检验预言，主线已由仿真可行性转向实验标定。</p>
+  - elementId: info
+    elementType: text
+    bounds: [64, 464, 560, 44]
+    content:
+      style: "$small"
+      fontSize: 12
+      text: |
+        <p>汇报人：池亦天（物理学院）　·　2026-11-02</p>
+        <p>仓库：github.com/sifangmian-lab/ipyt-chalktrick</p>
+  - elementId: sandbox
+    elementType: shape
+    bounds: [628, 140, 272, 240]
+    shapeName: rect
     fill: {type: solid, color: "$almond"}
-    border: {style: solid, width: 1.5, color: "$ink"}
-  - type: line
-    bounds: [664, 150, 208, 0]
-    border: {style: solid, width: 2, color: "$soft"}
-  - type: line
-    bounds: [664, 196, 208, 0]
-    border: {style: dash, width: 3, color: "$blue"}
-  - type: line
-    bounds: [664, 242, 208, 0]
-    border: {style: dash, width: 3, color: "$blue"}
-  - type: line
-    bounds: [664, 288, 208, 0]
-    border: {style: dash, width: 3, color: "$blue"}
-  - type: text
-    bounds: [664, 316, 208, 20]
-    content:
-      text: "v → 画线方向"
-      style: $caption
-      align: [center, top]
-  - type: line
-    bounds: [664, 366, 208, 0]
     border: {style: solid, width: 1, color: "$ink"}
-  - type: text
-    bounds: [664, 378, 208, 40]
+  - elementId: board
+    elementType: line
+    bounds: [642, 318, 244, 4]
+    viewBox: [244, 4]
+    points: "0,2 244,2"
+    curve: sharp
+    border: {style: solid, width: 2, color: "$ink"}
+  - elementId: chalk
+    elementType: line
+    bounds: [672, 232, 116, 80]
+    viewBox: [116, 80]
+    points: "0,0 116,80"
+    curve: round
+    border: {style: solid, width: 9, color: "$ink"}
+  - elementId: narw
+    elementType: line
+    bounds: [742, 240, 34, 60]
+    viewBox: [34, 60]
+    points: "0,0 34,60"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: nlab
+    elementType: text
+    bounds: [722, 226, 20, 16]
     content:
-      text: "压痕 p / 间隔 s / 沟槽 g / 痕宽 w"
-      style: $caption
-      align: [center, top]
-  - type: line
-    bounds: [700, 128, 0, 54]
-    border: {style: solid, width: 1.5, color: "$ink"}
-  - type: line
-    bounds: [700, 128, 40, -22]
-    border: {style: solid, width: 1.5, color: "$ink"}
-  - type: text
-    bounds: [712, 96, 40, 22]
-    content:
-      text: "N"
-      style: $body
-      color: "$blue"
+      fontSize: 13
       bold: true
+      color: "$blue"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: N
+  - elementId: varw
+    elementType: line
+    bounds: [806, 300, 52, 10]
+    viewBox: [52, 10]
+    points: "0,5 52,5"
+    curve: sharp
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$blue"}
+  - elementId: vlab
+    elementType: text
+    bounds: [862, 296, 18, 16]
+    content:
+      fontSize: 13
+      italic: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: v
+  - elementId: dash1
+    elementType: shape
+    bounds: [650, 338, 28, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$ink"}
+  - elementId: dash2
+    elementType: shape
+    bounds: [700, 338, 28, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$ink"}
+  - elementId: dash3
+    elementType: shape
+    bounds: [750, 338, 28, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$ink"}
+  - elementId: dash4
+    elementType: shape
+    bounds: [800, 338, 28, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$ink"}
+  - elementId: parw
+    elementType: line
+    bounds: [664, 352, 50, 10]
+    viewBox: [50, 10]
+    points: "0,5 50,5"
+    curve: sharp
+    arrow: [arrow, arrow]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - elementId: plab
+    elementType: text
+    bounds: [682, 364, 16, 15]
+    content:
+      fontSize: 12
+      italic: true
+      color: "$blue"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: p

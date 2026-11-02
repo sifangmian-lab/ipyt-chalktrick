@@ -1,50 +1,62 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 680, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "2026-10-24 评审：主线转向实验标定"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
-    content:
-      text: "11 / 13"
-      style: $cite
-      align: [right, top]
-  - type: shape
-    bounds: [48, 84, 864, 128]
-    shape: rect
+      style: "$pageTitle"
+      wrap: false
+      text: 10-24 评审：方向正确、既有仿真不必重跑，主线转向实验标定与模型判别
+  - elementId: box1
+    elementType: shape
+    bounds: [26, 88, 908, 112]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [68, 98, 824, 100]
+  - elementId: box1txt
+    elementType: text
+    bounds: [46, 100, 868, 88]
     content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.55
       text: |
-        <p><strong>评审总判断</strong>　12 项分级改进清单（P0×4 / P1×8）全部落地或归档；研究主线从“模型内推演”转向“实验标定与模型判别”；候选机制并行保留、不提前拍板。</p>
-      style: $body
-      fontSize: 12.5
-  - type: shape
-    bounds: [48, 228, 864, 128]
-    shape: rect
+        <p><strong>评审总判断（2026-10-24，附 12 项分级改进与验收标准）</strong></p>
+        <p>方向正确；既有仿真不必重跑。主线由「仿真可行性」转向「实验标定与模型判别」——候选机制（LuGre 与率态摩擦）与两个候选子模型<span style="color:$blue">并行保留，不提前拍板</span>。</p>
+  - elementId: box2
+    elementType: shape
+    bounds: [26, 216, 908, 148]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [68, 242, 824, 100]
+  - elementId: box2txt
+    elementType: text
+    bounds: [46, 228, 868, 124]
     content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.55
       text: |
-        <p><strong>测量约束</strong>　0.05 ms 事件需 200 kS/s 级采样（0.009 ms 事件需 1.1 MS/s）；现有 240 fps 视频与 44.1 kHz 声学<span style="color:$magenta">不足以分辨毫秒级 N(t)</span>——故按 ε / v 无量纲对照组织实验。</p>
-      style: $body
-      fontSize: 12.5
-  - type: shape
-    bounds: [48, 372, 864, 128]
-    shape: rect
+        <p><strong>测量约束（达不到的预言一律标注「当前不可检验」）</strong></p>
+        <p>· 最短卸载事件约 0.05 ms → 需约 <strong>200 kS/s</strong>；换向滞后约 0.009 ms → 需约 <strong>1.1 MS/s</strong>——240 fps 视频与 44.1 kHz 声学均不足。</p>
+        <p>· 仿真名义速度 0.5 m/s 与主装置规划 0.01–0.20 m/s <span style="color:$magenta">不匹配</span>：实验对照按 ε/v 等无量纲量组织，不直接对比名义速度。</p>
+  - elementId: box3
+    elementType: shape
+    bounds: [26, 380, 908, 112]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [68, 386, 824, 100]
+  - elementId: box3txt
+    elementType: text
+    bounds: [46, 392, 868, 88]
     content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.55
       text: |
-        <p><strong>模型欠账</strong>　<span style="color:$magenta">当前 v1/v2 单事件模型不能直接用于毫秒级 N(t) 反演</span>；LuGre / 率态模型的 D_c 需要阶跃或滑移—停止—再滑移瞬态才能辨识。</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [48, 512, 864, 18]
+        <p><strong>模型欠账（辨识路线的边界）</strong></p>
+        <p>E6A 的 I–N 关系为准静态平均，<span style="color:$magenta">不能直接用于</span>毫秒级 N(t) 反演；LuGre 动态参数与率态 D_c 不能由 E1/E2 单独辨识——需速度 / 载荷阶跃或「滑移—停止—再滑移」瞬态实验。</p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
     content:
-      text: "来源：docs/研究记录/研究进度评审_2026-10-24.md"
-      style: $cite
+      style: "$cite"
+      wrap: false
+      text: 来源：2026-10-24 研究进度评审（docs/研究记录/，12 项分级改进附验收标准）

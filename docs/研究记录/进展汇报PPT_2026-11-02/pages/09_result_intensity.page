@@ -1,56 +1,84 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 680, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "结果二：I(ξ) 可反演——任务 D 的模型基础"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
-    content:
-      text: "09 / 13"
-      style: $cite
-      align: [right, top]
-  - type: image
+      style: "$pageTitle"
+      wrap: false
+      text: 空间轮廓可反演交接状态：重按短而浓、轻按长而淡，回划折叠出尖峰
+  - elementId: fig
+    elementType: image
     bounds: [36, 90, 590, 394]
     src: media/intensity.png
     fit: {mode: fill}
-  - type: text
-    bounds: [36, 488, 590, 18]
+  - elementId: cap
+    elementType: text
+    bounds: [36, 488, 590, 20]
     content:
-      text: "图 3.2　划痕相对强度 I(ξ) 的时空依赖（同一第一阶段模型，变 ω₀ 与变 N₀ 两组对照）"
-      style: $caption
-  - type: text
-    bounds: [654, 96, 266, 120]
+      style: "$caption"
+      fontSize: 10.5
+      wrap: false
+      text: 图 2　划痕相对强度时空依赖：(a) N(t) 与沉积率 q(t)；(b) 空间映射 ξ(t)；(c) 变 ω₀；(d) 变 N₀。
+  - elementId: an1
+    elementType: text
+    bounds: [652, 96, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>(b) ξ(t) 折叠</strong></p>
-        <p style="margin-top:4px;color:$soft">回划折叠把末端事件映射到 I(ξ) 尖峰，位置随工况移动。</p>
-      style: $body
-      fontSize: 12.5
-  - type: line
-    bounds: [654, 222, 266, 0]
+        <p><span style="color:$blue">(b) ξ(t)</span>　末端回划把时间史折叠为空间分布——折叠段即尖峰来源。</p>
+  - elementId: an1rule
+    elementType: line
+    bounds: [652, 182, 282, 2]
+    viewBox: [282, 2]
+    points: "0,1 282,1"
+    curve: sharp
     border: {style: solid, width: 0.75, color: "$hairline"}
-  - type: text
-    bounds: [654, 238, 266, 120]
+  - elementId: an2
+    elementType: text
+    bounds: [652, 194, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>(d) 变 N₀ 重按</strong></p>
-        <p style="margin-top:4px;color:$soft">短而浓的重按痕与长而淡的常压痕在 I(ξ) 上可区分。</p>
-      style: $body
-      fontSize: 12.5
-  - type: line
-    bounds: [654, 364, 266, 0]
+        <p><span style="color:$blue">(d) 变 N₀（ω₀=0）</span>　N₀=8 N 短而陡（浓），N₀=1 N 长而缓（淡）。</p>
+  - elementId: an2rule
+    elementType: line
+    bounds: [652, 280, 282, 2]
+    viewBox: [282, 2]
+    points: "0,1 282,1"
+    curve: sharp
     border: {style: solid, width: 0.75, color: "$hairline"}
-  - type: text
-    bounds: [654, 380, 266, 96]
+  - elementId: an3
+    elementType: text
+    bounds: [652, 292, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>预言① 有佐证</strong></p>
-        <p style="margin-top:4px;color:$soft">Champneys–Várkonyi 2016 图 1(c) 独立显示同类折叠。</p>
-      style: $body
-      fontSize: 12.5
-  - type: shape
-    bounds: [36, 512, 884, 0.1]
-    shape: rect
+        <p><span style="color:$blue">预言①</span>「重按短而浓、轻按长而淡」获 Champneys–Várkonyi 图 1(c) 定性佐证。</p>
+  - elementId: conclbg
+    elementType: shape
+    bounds: [652, 386, 282, 106]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-    border: {style: none, width: 0, color: "$graybg"}
+  - elementId: concl
+    elementType: text
+    bounds: [666, 398, 254, 84]
+    content:
+      style: "$body"
+      fontSize: 13
+      lineHeight: 1.5
+      text: |
+        <p><strong>小结</strong>　I(ξ) 是交接状态 (N₀, ω₀) 的可反演观测量——任务 D 反演检验的模型基础。</p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
+    content:
+      style: "$cite"
+      wrap: false
+      text: 来源：code/划痕相对强度_时空依赖.py · 图存 figures/结果图/划痕相对强度_时空依赖.png

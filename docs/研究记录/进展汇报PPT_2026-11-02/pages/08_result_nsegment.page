@@ -1,56 +1,84 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 680, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "结果一：t* 与 I₂nd 由 (N₀, ω₀) 共同支配"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
-    content:
-      text: "08 / 13"
-      style: $cite
-      align: [right, top]
-  - type: image
+      style: "$pageTitle"
+      wrap: false
+      text: N₀ 增大 → 分离时间与笔痕强度同步上升，ω₀ 的增益趋于饱和
+  - elementId: fig
+    elementType: image
     bounds: [36, 90, 590, 394]
     src: media/n_segment.png
     fit: {mode: fill}
-  - type: text
-    bounds: [36, 488, 590, 18]
+  - elementId: cap
+    elementType: text
+    bounds: [36, 488, 590, 20]
     content:
-      text: "图 3.1　第一阶段 N 下降段数值结果（p=1.0 cm, R=1.0 cm, w=1.1 cm, v=50 cm/s, I=2.4×10⁻⁴ kg·m²，TanH 型）"
-      style: $caption
-  - type: text
-    bounds: [654, 96, 266, 120]
+      style: "$caption"
+      fontSize: 10.5
+      wrap: false
+      text: 图 1　N 下降段数值结果：(a)(b) N₀=4 N、ω₀=3 单轨迹；(c)(d) N₀=1–8 N 扫描，ω₀=0/3/6。
+  - elementId: an1
+    elementType: text
+    bounds: [652, 96, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>(a)(b) 单轨迹</strong></p>
-        <p style="margin-top:4px;color:$soft">θ(t) 回转、N(t) 在分离前持续下降，下降段斜率随 N₀ 变陡。</p>
-      style: $body
-      fontSize: 12.5
-  - type: line
-    bounds: [654, 222, 266, 0]
+        <p><span style="color:$blue">(a)(b) 单轨迹</span>　θ 单调上升至分离；N 全程几何卸载，中途经摩擦翻转。</p>
+  - elementId: an1rule
+    elementType: line
+    bounds: [652, 182, 282, 2]
+    viewBox: [282, 2]
+    points: "0,1 282,1"
+    curve: sharp
     border: {style: solid, width: 0.75, color: "$hairline"}
-  - type: text
-    bounds: [654, 238, 266, 120]
+  - elementId: an2
+    elementType: text
+    bounds: [652, 194, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>(c) t*(N₀)</strong></p>
-        <p style="margin-top:4px;color:$soft">分离时刻随按压力增加而提前，近似幂律。</p>
-      style: $body
-      fontSize: 12.5
-  - type: line
-    bounds: [654, 364, 266, 0]
+        <p><span style="color:$blue">(c) t*(N₀)</span>　三档 ω₀ 下分离时间均随交接压力单调上升。</p>
+  - elementId: an2rule
+    elementType: line
+    bounds: [652, 280, 282, 2]
+    viewBox: [282, 2]
+    points: "0,1 282,1"
+    curve: sharp
     border: {style: solid, width: 0.75, color: "$hairline"}
-  - type: text
-    bounds: [654, 380, 266, 96]
+  - elementId: an3
+    elementType: text
+    bounds: [652, 292, 282, 78]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.5
       text: |
-        <p><strong>(d) I₂nd(N₀)</strong></p>
-        <p style="margin-top:4px;color:$soft">二阶滑移量对 N₀ 更敏感，是辨识 N₀ 的观测量。</p>
-      style: $body
-      fontSize: 12.5
-  - type: shape
-    bounds: [36, 512, 884, 0.1]
-    shape: rect
+        <p><span style="color:$blue">(d) I₂nd(N₀)</span>　本段笔痕强度同趋势上升——交接压力是支配量。</p>
+  - elementId: conclbg
+    elementType: shape
+    bounds: [652, 386, 282, 106]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-    border: {style: none, width: 0, color: "$graybg"}
+  - elementId: concl
+    elementType: text
+    bounds: [666, 398, 254, 84]
+    content:
+      style: "$body"
+      fontSize: 13
+      lineHeight: 1.5
+      text: |
+        <p><strong>小结</strong>　t* 与 I₂nd 由交接状态 (N₀, ω₀) 共同支配，ω₀ 的增益随其增大趋于饱和——直接服务任务 B 的参数辨识。</p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
+    content:
+      style: "$cite"
+      wrap: false
+      text: 来源：code/粉笔_N下降段_完整模型.py · 图存 figures/结果图/粉笔_N下降段_结果.png

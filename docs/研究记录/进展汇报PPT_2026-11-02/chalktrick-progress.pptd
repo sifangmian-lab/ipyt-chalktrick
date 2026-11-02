@@ -1,5 +1,5 @@
 version: v2
-title: 粉笔虚线（ChalkTrick）研究进展汇报
+title: 粉笔虚线 ChalkTrick 研究进展汇报
 size: [960, 540]
 customFonts:
   - family: Liter
@@ -7,7 +7,7 @@ customFonts:
   - family: MiSans
     src: "https://statics.kimi.ai/neo-design-static/p-font/MiSans.ttf"
   - family: STIX Two Text
-    src: "https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap"
+    src: "https://fonts.googleapis.com/css2?family=STIX+Two+Text"
 theme:
   colors:
     ink: "#172C34"
@@ -21,38 +21,42 @@ theme:
   textStyles:
     pageTitle:
       fontSize: 29
-      bold: true
       color: "$ink"
       fontFamily: {latin: Liter, ea: MiSans}
+      bold: true
+      lineHeight: 1.15
     body:
       fontSize: 15
       color: "$ink"
-      lineHeight: 1.5
       fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.5
     small:
       fontSize: 12.5
       color: "$soft"
-      lineHeight: 1.45
       fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.45
     caption:
       fontSize: 11
       color: "$soft"
-      lineHeight: 1.4
       fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.35
     cite:
       fontSize: 10
       color: "$blue"
       fontFamily: {latin: Liter, ea: MiSans}
+      lineHeight: 1.3
   tableStyles:
     academic:
       cellStyle:
-        fontSize: 12.5
+        fontSize: 12
         color: "$ink"
+        fontFamily: {latin: Liter, ea: MiSans}
         align: [left, middle]
         border: [null, null, {style: solid, width: 0.75, color: "$hairline"}, null]
       firstRowStyle:
         bold: true
-        border: [null, null, {style: solid, width: 1.5, color: "$ink"}, null]
+        fontSize: 12.5
+        border: [null, null, {style: solid, width: 1.2, color: "$ink"}, null]
 pages:
   - pages/01_cover.page
   - pages/02_agenda.page

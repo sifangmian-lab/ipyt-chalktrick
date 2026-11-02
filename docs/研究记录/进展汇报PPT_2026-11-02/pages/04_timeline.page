@@ -1,106 +1,162 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 620, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "四周进展：从建仓到 S4v1 归档"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
+      style: "$pageTitle"
+      wrap: false
+      text: 四周从零到可复现：10-20 基建入库，10-30 完成核心文献中译
+  - elementId: tl1date
+    elementType: text
+    bounds: [26, 150, 200, 22]
     content:
-      text: "04 / 13"
-      style: $cite
-      align: [right, top]
-  - type: line
-    bounds: [64, 150, 832, 0]
-    border: {style: solid, width: 1.5, color: "$ink"}
-  - type: shape
-    bounds: [108, 143, 14, 14]
-    shape: ellipse
-    fill: {type: solid, color: "$blue"}
-  - type: shape
-    bounds: [340, 143, 14, 14]
-    shape: ellipse
-    fill: {type: solid, color: "$blue"}
-  - type: shape
-    bounds: [572, 143, 14, 14]
-    shape: ellipse
-    fill: {type: solid, color: "$blue"}
-  - type: shape
-    bounds: [804, 143, 14, 14]
-    shape: ellipse
-    fill: {type: solid, color: "$blue"}
-  - type: text
-    bounds: [64, 176, 200, 120]
+      fontSize: 16
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 2026-10-20
+  - elementId: tl1body
+    elementType: text
+    bounds: [26, 288, 205, 108]
     content:
+      style: "$small"
+      fontSize: 12
       text: |
-        <p><strong>2026-10-20</strong></p>
-        <p style="margin-top:4px">基建入库：仓库初始化、目录规范、trunk/develop 分支纪律确立。</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [296, 176, 200, 120]
+        <p>仓库初始化；docs / code / figures / assets 分级入库：综述与方案手册、模型源码、结果图与公式图、字体资源。</p>
+  - elementId: tl2date
+    elementType: text
+    bounds: [254, 150, 200, 22]
     content:
-      text: |
-        <p><strong>2026-10-23</strong></p>
-        <p style="margin-top:4px">文献库 19 篇全文 + 9 篇补充清单，N 下降段方向对照笔记成形。</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [528, 176, 200, 120]
+      fontSize: 16
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 2026-10-23
+  - elementId: tl2body
+    elementType: text
+    bounds: [254, 288, 205, 108]
     content:
+      style: "$small"
+      fontSize: 12
       text: |
-        <p><strong>2026-10-24</strong></p>
-        <p style="margin-top:4px">LuGre 摩擦 5 篇中文全译；进度评审定调：主线转向实验标定。</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [760, 176, 200, 120]
+        <p>参考文献库：19 篇全文（8 期刊 + 2 预印本）＋ 9 项网络资源；新增「新文献 × N 下降段」对照笔记。</p>
+  - elementId: tl3date
+    elementType: text
+    bounds: [482, 150, 200, 22]
     content:
+      fontSize: 16
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 2026-10-24
+  - elementId: tl3body
+    elementType: text
+    bounds: [482, 288, 205, 108]
+    content:
+      style: "$small"
+      fontSize: 12
       text: |
-        <p><strong>2026-10-30</strong></p>
-        <p style="margin-top:4px">译稿 4 篇 + 更新日志同步；S4v1 (μ, h/L)×k_c 平面归档。</p>
-      style: $body
-      fontSize: 12.5
-  - type: line
-    bounds: [64, 320, 832, 0]
+        <p>LuGre 论文中文全译（Åström &amp; Canudas de Wit 2008）：黏相预滑柔度的本构依据。</p>
+  - elementId: tl4date
+    elementType: text
+    bounds: [710, 150, 224, 22]
+    content:
+      fontSize: 16
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 2026-10-30
+  - elementId: tl4body
+    elementType: text
+    bounds: [710, 288, 224, 108]
+    content:
+      style: "$small"
+      fontSize: 12
+      text: |
+        <p>中译稿 4 篇：IPT 预选报告、Elmer 1997、Tonazzi 2020、Champneys &amp; Várkonyi 2016；建立更新日志。</p>
+  - elementId: tl
+    elementType: line
+    bounds: [26, 226, 908, 4]
+    viewBox: [908, 4]
+    points: "0,2 908,2"
+    curve: sharp
+    border: {style: solid, width: 1.2, color: "$ink"}
+  - elementId: dot1
+    elementType: shape
+    bounds: [32, 223, 10, 10]
+    shapeName: ellipse
+    fill: {type: solid, color: "$blue"}
+  - elementId: dot2
+    elementType: shape
+    bounds: [260, 223, 10, 10]
+    shapeName: ellipse
+    fill: {type: solid, color: "$blue"}
+  - elementId: dot3
+    elementType: shape
+    bounds: [488, 223, 10, 10]
+    shapeName: ellipse
+    fill: {type: solid, color: "$blue"}
+  - elementId: dot4
+    elementType: shape
+    bounds: [716, 223, 10, 10]
+    shapeName: ellipse
+    fill: {type: solid, color: "$blue"}
+  - elementId: statrule
+    elementType: line
+    bounds: [26, 424, 908, 2]
+    viewBox: [908, 2]
+    points: "0,1 908,1"
+    curve: sharp
     border: {style: solid, width: 0.75, color: "$hairline"}
-  - type: text
-    bounds: [64, 346, 130, 54]
+  - elementId: stat1
+    elementType: text
+    bounds: [26, 442, 168, 56]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
       text: |
-        <p><span style="font-size:26px;color:$primary"><strong>8</strong></span></p>
-        <p>次提交</p>
-      style: $caption
-  - type: text
-    bounds: [224, 346, 130, 54]
+        <p><span style="font-size:24px; color:$ink"><strong>8</strong></span><span style="font-size:13px; color:$ink"> 次提交</span></p>
+        <p style="margin-top:2px"><span style="font-size:11px; color:$soft">trunk-based，develop 日常</span></p>
+  - elementId: stat2
+    elementType: text
+    bounds: [210, 442, 168, 56]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
       text: |
-        <p><span style="font-size:26px;color:$primary"><strong>4</strong></span></p>
-        <p>文档分区</p>
-      style: $caption
-  - type: text
-    bounds: [384, 346, 130, 54]
+        <p><span style="font-size:24px; color:$ink"><strong>4</strong></span><span style="font-size:13px; color:$ink"> 个文档分区</span></p>
+        <p style="margin-top:2px"><span style="font-size:11px; color:$soft">文献综述 / 研究记录 / 实验指导 / 模型报告</span></p>
+  - elementId: stat3
+    elementType: text
+    bounds: [394, 442, 168, 56]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
       text: |
-        <p><span style="font-size:26px;color:$primary"><strong>2</strong></span></p>
-        <p>套模型源码</p>
-      style: $caption
-  - type: text
-    bounds: [544, 346, 130, 54]
+        <p><span style="font-size:24px; color:$ink"><strong>2</strong></span><span style="font-size:13px; color:$ink"> 套模型源码</span></p>
+        <p style="margin-top:2px"><span style="font-size:11px; color:$soft">N 下降段 · 划痕强度时空依赖</span></p>
+  - elementId: stat4
+    elementType: text
+    bounds: [578, 442, 168, 56]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
       text: |
-        <p><span style="font-size:26px;color:$primary"><strong>19+9</strong></span></p>
-        <p>篇文献</p>
-      style: $caption
-  - type: text
-    bounds: [704, 346, 130, 54]
+        <p><span style="font-size:24px; color:$ink"><strong>19+9</strong></span><span style="font-size:13px; color:$ink"> 篇文献</span></p>
+        <p style="margin-top:2px"><span style="font-size:11px; color:$soft">8 期刊 + 2 预印本 + 9 网络资源</span></p>
+  - elementId: stat5
+    elementType: text
+    bounds: [762, 442, 172, 56]
     content:
+      fontFamily: {latin: Liter, ea: MiSans}
       text: |
-        <p><span style="font-size:26px;color:$primary"><strong>5</strong></span></p>
-        <p>篇中文全译</p>
-      style: $caption
-  - type: text
-    bounds: [64, 440, 832, 40]
+        <p><span style="font-size:24px; color:$ink"><strong>5</strong></span><span style="font-size:13px; color:$ink"> 篇中文全译</span></p>
+        <p style="margin-top:2px"><span style="font-size:11px; color:$soft">公式 LaTeX 重排 · 术语统一</span></p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
     content:
-      text: "评审后两周（10-24 → 11-02）：评审 12 项分级落地、E1 手册与采购清单交付、S4v1 参数平面扫描归档、进展汇报 PPT 成稿。"
-      style: $small
+      style: "$cite"
+      wrap: false
+      text: 全部按工作区约定分类入库；研究历程与更新日志见 docs/研究记录/

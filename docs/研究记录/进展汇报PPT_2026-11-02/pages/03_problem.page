@@ -1,50 +1,85 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 760, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "题目定位：定量目标驱动的复现—辨识—验证体系"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
+      style: "$pageTitle"
+      wrap: false
+      text: 官方题目驱动：连续运动为何留下虚线——复现、辨识、普遍性、反演
+  - elementId: lhead
+    elementType: text
+    bounds: [26, 88, 270, 22]
     content:
-      text: "03 / 13"
-      style: $cite
-      align: [right, top]
-  - type: text
-    bounds: [40, 86, 424, 300]
+      fontSize: 14
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 现象与定量目标
+  - elementId: lbody
+    elementType: text
+    bounds: [26, 118, 270, 300]
     content:
+      style: "$body"
+      fontSize: 14
       text: |
-        <p><strong>现象（IPT 2023 “The Chalk Trick”）</strong></p>
-        <p style="margin-top:6px">粉笔垂直压向匀速移动的黑板，留下断续虚线——stick-slip 的桌面范式。</p>
-        <p style="margin-top:14px"><strong>定量目标</strong></p>
-        <p style="margin-top:6px">压痕周期 p、间隔 s、沟槽深度 g、痕宽 w，及其随按压力 N₀、画线速度 v 的变化律。</p>
-        <p style="margin-top:14px"><strong>主导无量纲组</strong></p>
-        <p style="margin-top:6px">(N₀, ω₀) 双参数支配分离时刻 t* 与二阶滑移量 I₂nd；α = k_c·L²/(EI) 为刚度比；R = v/(d·ω₁) 为速度比。</p>
-        <p style="margin-top:14px"><strong>研究边界</strong></p>
-        <p style="margin-top:6px">本阶段只处理自由轴刚体棒 + 接触柔度 k_c 的第一阶段模型；弹性杆与双稳态属 T2/T3 进阶线。</p>
-      style: $body
-      fontSize: 13.5
-  - type: shape
-    bounds: [496, 86, 424, 300]
-    shape: rect
+        <p>粉笔以钝角推画黑板，连续运动却留下周期性虚线——IPT 2023 赛题「The Chalk Trick」（Walter Lewin 演示）。</p>
+        <p style="margin-top:10px">定量目标：产出可预测虚线参数</p>
+        <p><span style="color:$blue">间距 p · 虚长 s · 间隙 g · 线宽 w</span></p>
+        <p style="margin-top:10px">关键变量：交接状态 (N₀, ω₀)、倾角 α、速度 v、粉笔半径 R。</p>
+  - elementId: frameA
+    elementType: shape
+    bounds: [330, 86, 604, 128]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [516, 102, 384, 268]
+  - elementId: frameAhead
+    elementType: text
+    bounds: [350, 98, 560, 20]
     content:
-      text: |
-        <p><strong>任务框架</strong></p>
-        <p style="margin-top:8px">A 复现与条件——p/s/g/w 相图与失稳边界</p>
-        <p style="margin-top:6px">B 参数辨识——由痕迹反推 (μ, k_c, N₀, v)</p>
-        <p style="margin-top:6px">C 普遍性验证——4 笔 × 4 板参数矩阵</p>
-        <p style="margin-top:6px">D 反演检验——盲反演与不确定度声明</p>
-        <p style="margin-top:14px"><strong>理论线</strong></p>
-        <p style="margin-top:8px">T1 低维集总模型（本阶段主线）</p>
-        <p style="margin-top:6px">T2 连续弹性梁（Euler–Bernoulli + 接触）</p>
-        <p style="margin-top:6px">T3 进阶理论——Δμ 差异、pk/R、v/(d·ω₁)</p>
-      style: $body
       fontSize: 13
-  - type: text
-    bounds: [40, 486, 880, 18]
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 任务框架（与官方题目逐条对齐）
+  - elementId: frameAbody
+    elementType: text
+    bounds: [350, 122, 566, 84]
     content:
-      text: "来源：docs/研究记录/Agent交接说明.md（2026-10-24 版，项目权威状态文档）"
-      style: $cite
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.55
+      text: |
+        <p><strong>A</strong>　复现与条件　　<strong>B</strong>　参数辨识（无量纲判据）</p>
+        <p><strong>C</strong>　普遍性验证　　<strong>D</strong>　反演检验</p>
+        <p style="margin-top:6px"><span style="font-size:12.5px; color:$soft">方案文档按 A–D 逐条定稿，成本、周计划与风险表同步修订。</span></p>
+  - elementId: rhead
+    elementType: text
+    bounds: [330, 240, 400, 22]
+    content:
+      fontSize: 14
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: 理论线（T1 → T2 → T3 递进）
+  - elementId: rbody
+    elementType: text
+    bounds: [330, 270, 604, 210]
+    content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.6
+      text: |
+        <p><strong>T1</strong>　低维集总模型：弹簧–滑块骨架，最快给出参数依赖</p>
+        <p><strong>T2</strong>　连续弹性梁：Euler–Bernoulli 梁 + 板面接触</p>
+        <p><strong>T3</strong>　进阶理论：率态摩擦 · 稳定性 · 分岔 · 相图 · 磨损 · 无量纲化</p>
+        <p style="margin-top:8px"><span style="font-size:13px; color:$soft">T3(e) 给出无量纲组</span><span style="font-size:13px">（Δμ、pk/R、v/(d·ω₁) 等）与可检验预言；磨耗沉积按 Archard 型磨耗律建模，板面分布经相对位移映射、多次覆盖折叠求和。</span></p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
+    content:
+      style: "$cite"
+      wrap: false
+      text: IPT 2023, “The Chalk Trick” 预选报告（ipt.science，2903.pdf）· Champneys & Várkonyi 2016, IMA J. Appl. Math. 81(3) · 方案见 docs/实验指导/

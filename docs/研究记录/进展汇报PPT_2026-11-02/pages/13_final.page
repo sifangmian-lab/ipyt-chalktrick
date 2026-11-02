@@ -1,41 +1,112 @@
+pageType: final
 elements:
-  - type: text
-    bounds: [26, 15, 680, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "结论"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
+      style: "$pageTitle"
+      wrap: false
+      text: 结论：仓库可复现、预言可检验，接下来让实验裁决模型
+  - elementId: c1no
+    elementType: text
+    bounds: [26, 92, 44, 32]
     content:
-      text: "13 / 13"
-      style: $cite
-      align: [right, top]
-  - type: text
-    bounds: [64, 92, 832, 240]
+      fontSize: 22
+      bold: true
+      color: "$primary"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: "1"
+  - elementId: c1
+    elementType: text
+    bounds: [84, 92, 850, 60]
     content:
-      text: |
-        <p><strong>1.</strong>　第一阶段模型已给出可检验预言：t*(N₀)、I₂nd(N₀)、I(ξ) 折叠尖峰；I(ξ) 是任务 D 反演检验的观测量基础。</p>
-        <p style="margin-top:14px"><strong>2.</strong>　评审后主线正确转向实验标定：E1–E8 流水线、测量链约束与验收硬指标已文档化。</p>
-        <p style="margin-top:14px"><strong>3.</strong>　下一步优先级：k_c 刚性极限扫描 → (N₀, ω₀) 自洽化 → 多周期稳定性 → E8 实验对照。</p>
-      style: $body
+      style: "$body"
       fontSize: 14
-      lineHeight: 1.55
-  - type: shape
-    bounds: [48, 340, 864, 108]
-    shape: rect
+      lineHeight: 1.5
+      text: |
+        <p><strong>文献—模型—实验三线闭环已建成。</strong>19+9 篇文献库、5 篇中译、2 份简报；N 下降段模型报告与源码；E1–E8 实验体系与第一阶段搭建指导、E1 手册——全部入库可复现。</p>
+  - elementId: rule1
+    elementType: line
+    bounds: [26, 168, 908, 2]
+    viewBox: [908, 2]
+    points: "0,1 908,1"
+    curve: sharp
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - elementId: c2no
+    elementType: text
+    bounds: [26, 184, 44, 32]
+    content:
+      fontSize: 22
+      bold: true
+      color: "$primary"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: "2"
+  - elementId: c2
+    elementType: text
+    bounds: [84, 184, 850, 60]
+    content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.5
+      text: |
+        <p><strong>第一阶段模型产出可检验预言。</strong>分离时间 t* 与本段笔痕强度随 N₀ 上升；交接状态 (N₀, ω₀) 支配虚线参数；「重按短而浓、轻按长而淡」获外部文献定性佐证。</p>
+  - elementId: rule2
+    elementType: line
+    bounds: [26, 260, 908, 2]
+    viewBox: [908, 2]
+    points: "0,1 908,1"
+    curve: sharp
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - elementId: c3no
+    elementType: text
+    bounds: [26, 276, 44, 32]
+    content:
+      fontSize: 22
+      bold: true
+      color: "$primary"
+      fontFamily: {latin: Liter, ea: MiSans}
+      wrap: false
+      text: "3"
+  - elementId: c3
+    elementType: text
+    bounds: [84, 276, 850, 60]
+    content:
+      style: "$body"
+      fontSize: 14
+      lineHeight: 1.5
+      text: |
+        <p><strong>主线切换已完成。</strong>仿真可行性验证收官，转入实验标定与模型判别；首个实验动作是 E1（硬指标：相对标准差 ≤ 5%），并行启动 k_c 刚性极限纯数值扫描。</p>
+  - elementId: openbg
+    elementType: shape
+    bounds: [26, 360, 908, 96]
+    shapeName: rect
     fill: {type: solid, color: "$graybg"}
-  - type: text
-    bounds: [68, 354, 824, 82]
+  - elementId: open
+    elementType: text
+    bounds: [46, 372, 868, 72]
     content:
+      style: "$body"
+      fontSize: 13.5
+      lineHeight: 1.55
       text: |
-        <p><strong>未决问题</strong>　k_c 扫描是否收敛到唯一刚性极限？画线/虚线边界能否被 E4 主装置定量证实？两者直接决定 T2 弹性杆线的启动时机。</p>
-      style: $body
-      fontSize: 12.5
-  - type: text
-    bounds: [48, 474, 864, 40]
+        <p><strong>未决问题</strong></p>
+        <p>① k_c 刚性极限收敛与否——决定罚模型自洽，或分离须改 Painlevé 刚性化处理；</p>
+        <p>② 线性稳定性预言的画线 / 虚线边界，能否被 E4 相图实验证实。</p>
+  - elementId: footer
+    elementType: text
+    bounds: [26, 478, 908, 22]
     content:
+      style: "$caption"
+      fontSize: 11.5
+      wrap: false
       text: |
-        <p>仓库：github.com/sifangmian-lab/ipyt-chalktrick（develop 分支）</p>
-        <p>权威状态：docs/研究记录/Agent交接说明.md · 本页数据截至 2026-11-02</p>
-      style: $cite
-      fontSize: 10.5
+        <p>仓库：github.com/sifangmian-lab/ipyt-chalktrick（develop）· 研究历程与更新日志：docs/研究记录/ · 2026-11-02</p>
+  - elementId: cite
+    elementType: text
+    bounds: [26, 512, 908, 16]
+    content:
+      style: "$cite"
+      wrap: false
+      text: 谢谢，欢迎讨论。

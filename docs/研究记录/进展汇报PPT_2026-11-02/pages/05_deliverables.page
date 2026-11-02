@@ -1,29 +1,56 @@
+pageType: content
 elements:
-  - type: text
-    bounds: [26, 15, 620, 40]
+  - elementId: title
+    elementType: text
+    bounds: [26, 16, 908, 42]
     content:
-      text: "交付清单：四分区 + 代码 + 图"
-      style: $pageTitle
-  - type: text
-    bounds: [700, 24, 234, 20]
-    content:
-      text: "05 / 13"
-      style: $cite
-      align: [right, top]
-  - type: table
-    bounds: [40, 84, 880, 370]
-    style: $academic
-    columnWidths: [150, 510, 220]
+      style: "$pageTitle"
+      wrap: false
+      text: 交付物全清单：文档 4 类、代码 2 套、结果图 2 张，全部入库可复现
+  - elementId: table
+    elementType: table
+    bounds: [26, 86, 908, 392]
+    columnWidths: [0.17, 0.63, 0.20]
+    rowHeights: [0.10, 0.18, 0.18, 0.18, 0.18, 0.18]
+    style: "$academic"
     rows:
-      - ["分区", "交付物", "状态"]
-      - ["docs/研究记录", "更新日志 · plan · research_a/b · 评审 2026-10-24 · 参数与证据总表 · E1 原始数据", "持续更新"]
-      - ["docs/参考文献库", "19 篇全文 PDF + 5 篇中文全译 + 待补清单", "齐备"]
-      - ["docs/实验指导", "实验与理论建模方案 · 第一阶段搭建指导 · E1 手册 · E3/E5/E6 规程 · 采购清单", "已交付"]
-      - ["docs/模型报告", "粉笔 N 下降段建模与数值模拟（PDF）+ 2026-10-25 增补与勘误", "已交付"]
-      - ["code", "v1 主模型 + S1–S3 扫描套件 + v2 共享内核 + S4–S7 + S4v1 内核 + 回归工具", "回归通过"]
-      - ["figures/结果图 · simulations", "N 下降段结果图 · 划痕强度时空依赖 · S1–S3/S4–S7/S4v1 结果目录", "归档"]
-  - type: text
-    bounds: [40, 474, 880, 36]
+      - - text: 分区
+        - text: 交付物
+        - text: 状态
+      - - text: |
+            <p><strong>docs/文献综述</strong></p>
+        - text: |
+            <p>粉笔虚线现象文献综述（md + docx）＋ 调研简报 ×2：stick-slip 理论基础 / 系统与实验方法</p>
+        - text: |
+            <p><span style="color:$blue">已交付</span></p>
+      - - text: |
+            <p><strong>docs/实验指导</strong></p>
+        - text: |
+            <p>实验与理论建模方案（docx，A–D 对齐）· 第一阶段实验详解与搭建指导（pdf，采购表约 ¥250、两周日程）· 实验 E1 指导手册（pdf）</p>
+        - text: |
+            <p><span style="color:$blue">已交付</span></p>
+      - - text: |
+            <p><strong>docs/模型报告</strong></p>
+        - text: |
+            <p>粉笔 N 下降段：建模与数值模拟（pdf，附录为可运行源码，可直接复算）</p>
+        - text: |
+            <p><span style="color:$blue">已交付</span></p>
+      - - text: |
+            <p><strong>docs/参考文献库</strong></p>
+        - text: |
+            <p>19 篇全文 ＋ 9 项网络资源 ＋ 5 篇中文全译（LuGre 2008、Elmer 1997、Tonazzi 2020、Painlevé 2016、IPT 预选报告）</p>
+        - text: |
+            <p>持续维护</p>
+      - - text: |
+            <p><strong>code/ ＋ figures/</strong></p>
+        - text: |
+            <p>N 下降段完整模型、划痕相对强度时空依赖（可运行）＋ tools（LaTeX 渲染 / 字体 / PDF 构建）；结果图 2 张、公式图 12 张</p>
+        - text: |
+            <p><span style="color:$blue">已入库</span></p>
+  - elementId: note
+    elementType: text
+    bounds: [26, 490, 908, 18]
     content:
-      text: "分支纪律：develop 日常提交，trunk 稳定快照；两分支非破坏同步，不自行合并。"
-      style: $caption
+      style: "$caption"
+      wrap: false
+      text: 状态截至 2026-11-02；文档版本以 docs/ 为准，本地 D:\vibelab\iypt 工作区经 develop 分支非破坏同步。
