@@ -1,0 +1,50 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "2026-10-24 评审：主线转向实验标定"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "11 / 13"
+      style: $cite
+      align: [right, top]
+  - type: shape
+    bounds: [48, 84, 864, 128]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [68, 98, 824, 100]
+    content:
+      text: |
+        <p><strong>评审总判断</strong>　12 项分级改进清单（P0×4 / P1×8）全部落地或归档；研究主线从“模型内推演”转向“实验标定与模型判别”；候选机制并行保留、不提前拍板。</p>
+      style: $body
+      fontSize: 12.5
+  - type: shape
+    bounds: [48, 228, 864, 128]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [68, 242, 824, 100]
+    content:
+      text: |
+        <p><strong>测量约束</strong>　0.05 ms 事件需 200 kS/s 级采样（0.009 ms 事件需 1.1 MS/s）；现有 240 fps 视频与 44.1 kHz 声学<span style="color:$magenta">不足以分辨毫秒级 N(t)</span>——故按 ε / v 无量纲对照组织实验。</p>
+      style: $body
+      fontSize: 12.5
+  - type: shape
+    bounds: [48, 372, 864, 128]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [68, 386, 824, 100]
+    content:
+      text: |
+        <p><strong>模型欠账</strong>　<span style="color:$magenta">当前 v1/v2 单事件模型不能直接用于毫秒级 N(t) 反演</span>；LuGre / 率态模型的 D_c 需要阶跃或滑移—停止—再滑移瞬态才能辨识。</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [48, 512, 864, 18]
+    content:
+      text: "来源：docs/研究记录/研究进度评审_2026-10-24.md"
+      style: $cite

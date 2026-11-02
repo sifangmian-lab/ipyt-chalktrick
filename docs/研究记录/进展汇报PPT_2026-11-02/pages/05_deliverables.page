@@ -1,0 +1,29 @@
+elements:
+  - type: text
+    bounds: [26, 15, 620, 40]
+    content:
+      text: "交付清单：四分区 + 代码 + 图"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "05 / 13"
+      style: $cite
+      align: [right, top]
+  - type: table
+    bounds: [40, 84, 880, 370]
+    style: $academic
+    columnWidths: [150, 510, 220]
+    rows:
+      - ["分区", "交付物", "状态"]
+      - ["docs/研究记录", "更新日志 · plan · research_a/b · 评审 2026-10-24 · 参数与证据总表 · E1 原始数据", "持续更新"]
+      - ["docs/参考文献库", "19 篇全文 PDF + 5 篇中文全译 + 待补清单", "齐备"]
+      - ["docs/实验指导", "实验与理论建模方案 · 第一阶段搭建指导 · E1 手册 · E3/E5/E6 规程 · 采购清单", "已交付"]
+      - ["docs/模型报告", "粉笔 N 下降段建模与数值模拟（PDF）+ 2026-10-25 增补与勘误", "已交付"]
+      - ["code", "v1 主模型 + S1–S3 扫描套件 + v2 共享内核 + S4–S7 + S4v1 内核 + 回归工具", "回归通过"]
+      - ["figures/结果图 · simulations", "N 下降段结果图 · 划痕强度时空依赖 · S1–S3/S4–S7/S4v1 结果目录", "归档"]
+  - type: text
+    bounds: [40, 474, 880, 36]
+    content:
+      text: "分支纪律：develop 日常提交，trunk 稳定快照；两分支非破坏同步，不自行合并。"
+      style: $caption

@@ -1,0 +1,106 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "第一阶段模型：自由轴刚体棒 + 接触柔度"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "07 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [40, 84, 300, 400]
+    content:
+      text: |
+        <p><strong>对象</strong></p>
+        <p style="margin-top:4px">刚体棒长 L，质心自由；粉笔端以弹簧 k_c 压向板面；板以速度 v 平移。</p>
+        <p style="margin-top:12px"><strong>事件链</strong></p>
+        <p style="margin-top:4px">启动段（黏着）→ 摩擦翻转（tanh 平滑）→ 滑行段 → δ=0 分离。</p>
+        <p style="margin-top:12px"><strong>骨架</strong></p>
+        <p style="margin-top:4px">N = k_c·δ，δ = L·cosθ − h；tanh 型 μ(v_rel) 翻转；分离判据 δ=0。</p>
+        <p style="margin-top:12px"><strong>输出量</strong></p>
+        <p style="margin-top:4px">t*（分离时刻）、I₂nd（二阶滑移量）、I(ξ)（空间相对强度，含末端回划折叠尖峰）。</p>
+      style: $body
+      fontSize: 12.5
+  - type: shape
+    bounds: [368, 84, 260, 400]
+    shape: rect
+    fill: {type: solid, color: "$almond"}
+    border: {style: solid, width: 1.5, color: "$ink"}
+  - type: line
+    bounds: [420, 200, 180, 0]
+    border: {style: solid, width: 2, color: "$ink"}
+  - type: shape
+    bounds: [414, 194, 12, 12]
+    shape: ellipse
+    fill: {type: solid, color: "$ink"}
+  - type: text
+    bounds: [398, 216, 44, 20]
+    content:
+      text: "O 枢轴"
+      style: $caption
+      align: [center, top]
+  - type: line
+    bounds: [470, 200, 90, 120]
+    border: {style: solid, width: 2, color: "$ink"}
+  - type: text
+    bounds: [560, 268, 30, 20]
+    content:
+      text: "L"
+      style: $body
+      italic: true
+  - type: line
+    bounds: [560, 320, 0, 60]
+    border: {style: dash, width: 1, color: "$soft"}
+  - type: text
+    bounds: [568, 344, 24, 20]
+    content:
+      text: "h"
+      style: $body
+      italic: true
+  - type: text
+    bounds: [480, 226, 36, 20]
+    content:
+      text: "θ"
+      style: $body
+      italic: true
+  - type: line
+    bounds: [560, 320, 0, -46]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - type: text
+    bounds: [568, 288, 60, 20]
+    content:
+      text: "N = k_c·δ"
+      style: $caption
+      color: "$blue"
+  - type: line
+    bounds: [470, 320, 60, 0]
+    border: {style: solid, width: 1.5, color: "$magenta"}
+  - type: text
+    bounds: [472, 328, 80, 20]
+    content:
+      text: "μN"
+      style: $caption
+      color: "$magenta"
+  - type: text
+    bounds: [392, 420, 216, 40]
+    content:
+      text: "板 v →　（板面以 v 平移，θ 为棒与板法向夹角）"
+      style: $caption
+      align: [center, top]
+  - type: text
+    bounds: [656, 84, 264, 400]
+    content:
+      text: |
+        <p><strong>核心关系</strong></p>
+        <p style="margin-top:6px">\(N=k_c\,\delta,\quad \delta=L\cos\theta-h\)</p>
+        <p style="margin-top:10px">\(I_{2nd}=\int \mu N\,|v_{rel}|\,dt\)</p>
+        <p style="margin-top:14px"><strong>摩擦翻转</strong></p>
+        <p style="margin-top:6px">tanh 型 μ(v_rel)：黏着→滑动换向时 μN 换向，驱动 θ 回转。</p>
+        <p style="margin-top:14px"><strong>分离</strong></p>
+        <p style="margin-top:6px">δ 减到 0，N→0，留下单段划痕；回划时末端折叠成尖峰。</p>
+        <p style="margin-top:14px;color:$blue">末端回划折叠尖峰是 I(ξ) 的指纹特征 → 09 页。</p>
+      style: $body
+      fontSize: 12.5

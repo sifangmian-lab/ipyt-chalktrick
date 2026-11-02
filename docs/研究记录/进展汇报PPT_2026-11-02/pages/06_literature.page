@@ -1,0 +1,34 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "文献基建：四条缝对接到模型假设"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "06 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [40, 86, 392, 380]
+    content:
+      text: |
+        <p><strong>规模</strong></p>
+        <p style="margin-top:6px">19 篇全文 + 9 篇补充清单；5 篇中文全译（LuGre 摩擦 5 篇，2026-10-24 定稿）；2 份方向对照简报。</p>
+        <p style="margin-top:14px"><strong>选型逻辑</strong></p>
+        <p style="margin-top:6px">按“本构—分离—激励—对照”四缝组织：每条缝直接对接模型的一条假设，读文献即审查模型。</p>
+        <p style="margin-top:14px"><strong>当前缺口</strong></p>
+        <p style="margin-top:6px">Gu et al. 1984 原文 PDF 损坏待重取；Sanders 2018 待索取；Nordmark 2011、Hoffmann–Gaul 2004 待补。</p>
+      style: $body
+      fontSize: 13.5
+  - type: line
+    bounds: [472, 96, 0, 340]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [504, 86, 416, 380]
+    content:
+      text: |
+        <p><strong>摩擦本构</strong>　<span style="color:$blue">Åström & Canudas de Wit 2008</span>（LuGre 综述）；<span style="color:$blue">Elmer 1997</span>（弹簧—滑块静摩擦相图）</p>
+        <p style="margin-top:4px;color:$soft">对接：LuGre σ₀/σ₁/σ₂ 三参数辨识计划。</p>
+        <p style="margin-top:12px"><strong>分离机制</strong>　<span style="color:$blue">Leine 2002</span>（Filippov 非光滑）；<span style="color:$blue">Champneys & Várkonyi 2016</span>（接触分离与 grazin"}

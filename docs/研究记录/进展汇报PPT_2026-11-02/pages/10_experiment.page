@@ -1,0 +1,82 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "实验体系：E1–E8 流水线"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "10 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [48, 92, 168, 96]
+    content:
+      text: |
+        <p><strong>E1–E3 标定</strong></p>
+        <p style="margin-top:4px;color:$soft">E1 斜面静摩擦 · E2 动态辨识 · E3 正交柔度模块</p>
+      style: $body
+      fontSize: 12
+  - type: line
+    bounds: [224, 128, 48, 0]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - type: text
+    bounds: [280, 92, 168, 96]
+    content:
+      text: |
+        <p><strong>E4 主装置</strong></p>
+        <p style="margin-top:4px;color:$soft">枢纽：恒速板 + 力/位移同步采集（E5 三通道）</p>
+      style: $body
+      fontSize: 12
+  - type: line
+    bounds: [456, 128, 48, 0]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - type: text
+    bounds: [512, 92, 168, 96]
+    content:
+      text: |
+        <p><strong>E6 痕迹计量</strong></p>
+        <p style="margin-top:4px;color:$soft">逐痕 p / s / g / w 与 I(ξ) 轮廓提取</p>
+      style: $body
+      fontSize: 12
+  - type: line
+    bounds: [688, 128, 48, 0]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - type: text
+    bounds: [744, 92, 168, 96]
+    content:
+      text: |
+        <p><strong>E7 盲反演</strong></p>
+        <p style="margin-top:4px;color:$soft">由实测 I(ξ) 反推 (μ, k_c, N₀, v)</p>
+      style: $body
+      fontSize: 12
+  - type: line
+    bounds: [400, 208, 48, 24]
+    border: {style: solid, width: 1.5, color: "$blue"}
+  - type: text
+    bounds: [280, 232, 400, 56]
+    content:
+      text: |
+        <p><strong>E8 普遍性矩阵</strong>　4 笔 × 4 板全参数矩阵，验证相图可迁移性</p>
+      style: $body
+      fontSize: 12.5
+      align: [center, top]
+  - type: shape
+    bounds: [48, 316, 864, 118]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [68, 330, 824, 92]
+    content:
+      text: |
+        <p><strong>阶段验收硬指标</strong>　E1：RSD ≤ 5% 且与文献 μ 值同量级 · B 组盲反演偏差落在声明不确定度内 · ε / v 无量纲对照组闭合</p>
+        <p style="margin-top:8px"><strong>已交付</strong>　搭建指导（预算 ¥250、两周日程）+ E1 手册 + 采购清单（14 项必买 + 验收 10 项）</p>
+        <p style="margin-top:8px"><strong>欠账</strong>　E3 口径未同步新候选子模型；E5 三通道同步待定传感器</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [48, 456, 864, 40]
+    content:
+      text: "E1 原始数据已入库（2026-10-29 斜面静摩擦记录）；E2–E8 尚无实测数据，相图与盲反演仍是计划态。"
+      style: $caption

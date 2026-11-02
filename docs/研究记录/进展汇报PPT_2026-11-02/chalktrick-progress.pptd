@@ -1,0 +1,69 @@
+version: v2
+title: 粉笔虚线（ChalkTrick）研究进展汇报
+size: [960, 540]
+customFonts:
+  - family: Liter
+    src: "https://statics.kimi.ai/neo-design-static/p-font/Liter.ttf"
+  - family: MiSans
+    src: "https://statics.kimi.ai/neo-design-static/p-font/MiSans.ttf"
+  - family: STIX Two Text
+    src: "https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap"
+theme:
+  colors:
+    ink: "#172C34"
+    primary: "#0064E0"
+    blue: "#0085FD"
+    magenta: "#C32E8F"
+    graybg: "#F1F4F7"
+    almond: "#FCEEDC"
+    hairline: "#C9D4DC"
+    soft: "#55656E"
+  textStyles:
+    pageTitle:
+      fontSize: 29
+      bold: true
+      color: "$ink"
+      fontFamily: {latin: Liter, ea: MiSans}
+    body:
+      fontSize: 15
+      color: "$ink"
+      lineHeight: 1.5
+      fontFamily: {latin: Liter, ea: MiSans}
+    small:
+      fontSize: 12.5
+      color: "$soft"
+      lineHeight: 1.45
+      fontFamily: {latin: Liter, ea: MiSans}
+    caption:
+      fontSize: 11
+      color: "$soft"
+      lineHeight: 1.4
+      fontFamily: {latin: Liter, ea: MiSans}
+    cite:
+      fontSize: 10
+      color: "$blue"
+      fontFamily: {latin: Liter, ea: MiSans}
+  tableStyles:
+    academic:
+      cellStyle:
+        fontSize: 12.5
+        color: "$ink"
+        align: [left, middle]
+        border: [null, null, {style: solid, width: 0.75, color: "$hairline"}, null]
+      firstRowStyle:
+        bold: true
+        border: [null, null, {style: solid, width: 1.5, color: "$ink"}, null]
+pages:
+  - pages/01_cover.page
+  - pages/02_agenda.page
+  - pages/03_problem.page
+  - pages/04_timeline.page
+  - pages/05_deliverables.page
+  - pages/06_literature.page
+  - pages/07_model.page
+  - pages/08_result_nsegment.page
+  - pages/09_result_intensity.page
+  - pages/10_experiment.page
+  - pages/11_review.page
+  - pages/12_next.page
+  - pages/13_final.page

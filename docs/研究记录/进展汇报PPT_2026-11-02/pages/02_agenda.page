@@ -1,0 +1,89 @@
+elements:
+  - type: text
+    bounds: [26, 15, 620, 40]
+    content:
+      text: "汇报路线"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "合计 40 min · 第 25 min 起开放讨论"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [64, 108, 90, 60]
+    content:
+      text: "01"
+      style: $pageTitle
+      fontSize: 40
+      color: "$primary"
+  - type: text
+    bounds: [176, 108, 600, 60]
+    content:
+      text: |
+        <p><strong>题目定位与四周进展</strong></p>
+        <p style="margin-top:4px"><span style="color:$soft">IPT 2023 The Chalk Trick · 现象与定量目标 · 仓库基建与交付清单</span></p>
+      style: $body
+  - type: text
+    bounds: [800, 108, 96, 60]
+    content:
+      text: "10 min"
+      style: $body
+      color: "$soft"
+      align: [right, top]
+  - type: line
+    bounds: [64, 186, 832, 0]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [64, 214, 90, 60]
+    content:
+      text: "02"
+      style: $pageTitle
+      fontSize: 40
+      color: "$primary"
+  - type: text
+    bounds: [176, 214, 600, 60]
+    content:
+      text: |
+        <p><strong>第一阶段模型与关键结果</strong>（汇报重心）</p>
+        <p style="margin-top:4px"><span style="color:$soft">N 下降段模型骨架 · t*(N₀) 与 I₂nd(N₀) · I(ξ) 时空依赖与可反演性</span></p>
+      style: $body
+  - type: text
+    bounds: [800, 214, 96, 60]
+    content:
+      text: "15 min"
+      style: $body
+      color: "$soft"
+      align: [right, top]
+  - type: line
+    bounds: [64, 292, 832, 0]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [64, 320, 90, 60]
+    content:
+      text: "03"
+      style: $pageTitle
+      fontSize: 40
+      color: "$primary"
+  - type: text
+    bounds: [176, 320, 600, 60]
+    content:
+      text: |
+        <p><strong>实验体系、评审结论与下一步</strong></p>
+        <p style="margin-top:4px"><span style="color:$soft">E1–E8 流水线 · 2026-10-24 评审 12 项分级 · k_c 扫描与 (N₀, ω₀) 自洽化</span></p>
+      style: $body
+  - type: text
+    bounds: [800, 320, 96, 60]
+    content:
+      text: "15 min"
+      style: $body
+      color: "$soft"
+      align: [right, top]
+  - type: line
+    bounds: [64, 398, 832, 0]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [64, 424, 832, 44]
+    content:
+      text: "所有仿真结论按数值预言口径陈述；实验事实仅引用 E1 原始数据记录。"
+      style: $caption

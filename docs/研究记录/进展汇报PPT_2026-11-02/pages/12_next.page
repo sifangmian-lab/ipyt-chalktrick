@@ -1,0 +1,77 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "下一步：仿真补证与实验对照"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "12 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [64, 96, 40, 40]
+    content:
+      text: "①"
+      style: $pageTitle
+      fontSize: 24
+      color: "$primary"
+  - type: text
+    bounds: [116, 96, 780, 56]
+    content:
+      text: |
+        <p><strong>k_c 刚性极限扫描 + ε 灵敏度</strong>（10³–10⁷ N/m）——优先级最高，判定第一阶段模型是否收敛到唯一刚性极限</p>
+      style: $body
+      fontSize: 13
+  - type: text
+    bounds: [64, 176, 40, 40]
+    content:
+      text: "②"
+      style: $pageTitle
+      fontSize: 24
+      color: "$primary"
+  - type: text
+    bounds: [116, 176, 780, 56]
+    content:
+      text: |
+        <p><strong>(N₀, ω₀) 自洽化</strong>——E1 数据 + Elmer 1997 / Putelat 2008 相位图联合定标，消除双参数退化</p>
+      style: $body
+      fontSize: 13
+  - type: text
+    bounds: [64, 256, 40, 40]
+    content:
+      text: "③"
+      style: $pageTitle
+      fontSize: 24
+      color: "$primary"
+  - type: text
+    bounds: [116, 256, 780, 56]
+    content:
+      text: |
+        <p><strong>多周期与稳定性</strong>——Sulollari 2025 线性稳定性 + 冲击映射，判 Hopf / 鞍结分岔与实验虚线周期的对应</p>
+      style: $body
+      fontSize: 13
+  - type: text
+    bounds: [64, 336, 40, 40]
+    content:
+      text: "④"
+      style: $pageTitle
+      fontSize: 24
+      color: "$primary"
+  - type: text
+    bounds: [116, 336, 780, 56]
+    content:
+      text: |
+        <p><strong>实验对照</strong>——Tonazzi 2020 迟滞扫描思路引入 E8 矩阵，区分可逆与不可逆痕迹机制</p>
+      style: $body
+      fontSize: 13
+  - type: line
+    bounds: [64, 416, 832, 0]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [64, 436, 832, 60]
+    content:
+      text: |
+        <p><span style="color:$magenta">资料待办</span>　Gu et al. 1984 PDF 损坏待重取；Sanders 2018 待索取。资料缺口不阻塞 ①–④。</p>
+      style: $small

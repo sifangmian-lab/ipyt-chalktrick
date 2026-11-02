@@ -1,0 +1,106 @@
+elements:
+  - type: text
+    bounds: [26, 15, 620, 40]
+    content:
+      text: "四周进展：从建仓到 S4v1 归档"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "04 / 13"
+      style: $cite
+      align: [right, top]
+  - type: line
+    bounds: [64, 150, 832, 0]
+    border: {style: solid, width: 1.5, color: "$ink"}
+  - type: shape
+    bounds: [108, 143, 14, 14]
+    shape: ellipse
+    fill: {type: solid, color: "$blue"}
+  - type: shape
+    bounds: [340, 143, 14, 14]
+    shape: ellipse
+    fill: {type: solid, color: "$blue"}
+  - type: shape
+    bounds: [572, 143, 14, 14]
+    shape: ellipse
+    fill: {type: solid, color: "$blue"}
+  - type: shape
+    bounds: [804, 143, 14, 14]
+    shape: ellipse
+    fill: {type: solid, color: "$blue"}
+  - type: text
+    bounds: [64, 176, 200, 120]
+    content:
+      text: |
+        <p><strong>2026-10-20</strong></p>
+        <p style="margin-top:4px">基建入库：仓库初始化、目录规范、trunk/develop 分支纪律确立。</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [296, 176, 200, 120]
+    content:
+      text: |
+        <p><strong>2026-10-23</strong></p>
+        <p style="margin-top:4px">文献库 19 篇全文 + 9 篇补充清单，N 下降段方向对照笔记成形。</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [528, 176, 200, 120]
+    content:
+      text: |
+        <p><strong>2026-10-24</strong></p>
+        <p style="margin-top:4px">LuGre 摩擦 5 篇中文全译；进度评审定调：主线转向实验标定。</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [760, 176, 200, 120]
+    content:
+      text: |
+        <p><strong>2026-10-30</strong></p>
+        <p style="margin-top:4px">译稿 4 篇 + 更新日志同步；S4v1 (μ, h/L)×k_c 平面归档。</p>
+      style: $body
+      fontSize: 12.5
+  - type: line
+    bounds: [64, 320, 832, 0]
+    border: {style: solid, width: 0.75, color: "$hairline"}
+  - type: text
+    bounds: [64, 346, 130, 54]
+    content:
+      text: |
+        <p><span style="font-size:26px;color:$primary"><strong>8</strong></span></p>
+        <p>次提交</p>
+      style: $caption
+  - type: text
+    bounds: [224, 346, 130, 54]
+    content:
+      text: |
+        <p><span style="font-size:26px;color:$primary"><strong>4</strong></span></p>
+        <p>文档分区</p>
+      style: $caption
+  - type: text
+    bounds: [384, 346, 130, 54]
+    content:
+      text: |
+        <p><span style="font-size:26px;color:$primary"><strong>2</strong></span></p>
+        <p>套模型源码</p>
+      style: $caption
+  - type: text
+    bounds: [544, 346, 130, 54]
+    content:
+      text: |
+        <p><span style="font-size:26px;color:$primary"><strong>19+9</strong></span></p>
+        <p>篇文献</p>
+      style: $caption
+  - type: text
+    bounds: [704, 346, 130, 54]
+    content:
+      text: |
+        <p><span style="font-size:26px;color:$primary"><strong>5</strong></span></p>
+        <p>篇中文全译</p>
+      style: $caption
+  - type: text
+    bounds: [64, 440, 832, 40]
+    content:
+      text: "评审后两周（10-24 → 11-02）：评审 12 项分级落地、E1 手册与采购清单交付、S4v1 参数平面扫描归档、进展汇报 PPT 成稿。"
+      style: $small

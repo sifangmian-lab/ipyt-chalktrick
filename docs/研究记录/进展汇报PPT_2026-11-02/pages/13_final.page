@@ -1,0 +1,41 @@
+elements:
+  - type: text
+    bounds: [26, 15, 680, 40]
+    content:
+      text: "结论"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "13 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [64, 92, 832, 240]
+    content:
+      text: |
+        <p><strong>1.</strong>　第一阶段模型已给出可检验预言：t*(N₀)、I₂nd(N₀)、I(ξ) 折叠尖峰；I(ξ) 是任务 D 反演检验的观测量基础。</p>
+        <p style="margin-top:14px"><strong>2.</strong>　评审后主线正确转向实验标定：E1–E8 流水线、测量链约束与验收硬指标已文档化。</p>
+        <p style="margin-top:14px"><strong>3.</strong>　下一步优先级：k_c 刚性极限扫描 → (N₀, ω₀) 自洽化 → 多周期稳定性 → E8 实验对照。</p>
+      style: $body
+      fontSize: 14
+      lineHeight: 1.55
+  - type: shape
+    bounds: [48, 340, 864, 108]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [68, 354, 824, 82]
+    content:
+      text: |
+        <p><strong>未决问题</strong>　k_c 扫描是否收敛到唯一刚性极限？画线/虚线边界能否被 E4 主装置定量证实？两者直接决定 T2 弹性杆线的启动时机。</p>
+      style: $body
+      fontSize: 12.5
+  - type: text
+    bounds: [48, 474, 864, 40]
+    content:
+      text: |
+        <p>仓库：github.com/sifangmian-lab/ipyt-chalktrick（develop 分支）</p>
+        <p>权威状态：docs/研究记录/Agent交接说明.md · 本页数据截至 2026-11-02</p>
+      style: $cite
+      fontSize: 10.5

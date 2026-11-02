@@ -1,0 +1,50 @@
+elements:
+  - type: text
+    bounds: [26, 15, 760, 40]
+    content:
+      text: "题目定位：定量目标驱动的复现—辨识—验证体系"
+      style: $pageTitle
+  - type: text
+    bounds: [700, 24, 234, 20]
+    content:
+      text: "03 / 13"
+      style: $cite
+      align: [right, top]
+  - type: text
+    bounds: [40, 86, 424, 300]
+    content:
+      text: |
+        <p><strong>现象（IPT 2023 “The Chalk Trick”）</strong></p>
+        <p style="margin-top:6px">粉笔垂直压向匀速移动的黑板，留下断续虚线——stick-slip 的桌面范式。</p>
+        <p style="margin-top:14px"><strong>定量目标</strong></p>
+        <p style="margin-top:6px">压痕周期 p、间隔 s、沟槽深度 g、痕宽 w，及其随按压力 N₀、画线速度 v 的变化律。</p>
+        <p style="margin-top:14px"><strong>主导无量纲组</strong></p>
+        <p style="margin-top:6px">(N₀, ω₀) 双参数支配分离时刻 t* 与二阶滑移量 I₂nd；α = k_c·L²/(EI) 为刚度比；R = v/(d·ω₁) 为速度比。</p>
+        <p style="margin-top:14px"><strong>研究边界</strong></p>
+        <p style="margin-top:6px">本阶段只处理自由轴刚体棒 + 接触柔度 k_c 的第一阶段模型；弹性杆与双稳态属 T2/T3 进阶线。</p>
+      style: $body
+      fontSize: 13.5
+  - type: shape
+    bounds: [496, 86, 424, 300]
+    shape: rect
+    fill: {type: solid, color: "$graybg"}
+  - type: text
+    bounds: [516, 102, 384, 268]
+    content:
+      text: |
+        <p><strong>任务框架</strong></p>
+        <p style="margin-top:8px">A 复现与条件——p/s/g/w 相图与失稳边界</p>
+        <p style="margin-top:6px">B 参数辨识——由痕迹反推 (μ, k_c, N₀, v)</p>
+        <p style="margin-top:6px">C 普遍性验证——4 笔 × 4 板参数矩阵</p>
+        <p style="margin-top:6px">D 反演检验——盲反演与不确定度声明</p>
+        <p style="margin-top:14px"><strong>理论线</strong></p>
+        <p style="margin-top:8px">T1 低维集总模型（本阶段主线）</p>
+        <p style="margin-top:6px">T2 连续弹性梁（Euler–Bernoulli + 接触）</p>
+        <p style="margin-top:6px">T3 进阶理论——Δμ 差异、pk/R、v/(d·ω₁)</p>
+      style: $body
+      fontSize: 13
+  - type: text
+    bounds: [40, 486, 880, 18]
+    content:
+      text: "来源：docs/研究记录/Agent交接说明.md（2026-10-24 版，项目权威状态文档）"
+      style: $cite
