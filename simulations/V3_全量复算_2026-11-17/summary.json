@@ -1,0 +1,75 @@
+{
+  "cases": 1074,
+  "by_study": {
+    "S0": {
+      "first_velocity_zero": 2
+    },
+    "S1": {
+      "first_velocity_zero": 97,
+      "normal_force_zero": 35,
+      "time_limit": 3
+    },
+    "S2": {
+      "time_limit": 34,
+      "normal_force_zero": 2
+    },
+    "S3": {
+      "time_limit": 1,
+      "first_velocity_zero": 6
+    },
+    "S4v1": {
+      "infeasible_preload": 80,
+      "time_limit": 28,
+      "first_velocity_zero": 137
+    },
+    "S4": {
+      "first_velocity_zero": 3
+    },
+    "S5": {
+      "first_velocity_zero": 16
+    },
+    "S5b": {
+      "first_velocity_zero": 21
+    },
+    "S6": {
+      "first_velocity_zero": 19
+    },
+    "S6b": {
+      "first_velocity_zero": 161,
+      "infeasible_preload": 312,
+      "time_limit": 49,
+      "normal_force_zero": 6
+    },
+    "S7": {
+      "first_velocity_zero": 2,
+      "time_limit": 1
+    },
+    "E1": {
+      "first_velocity_zero": 56
+    },
+    "S9": {
+      "time_limit": 3
+    }
+  },
+  "by_outcome": {
+    "first_velocity_zero": 520,
+    "normal_force_zero": 43,
+    "time_limit": 119,
+    "infeasible_preload": 392
+  },
+  "max_coordinate_error_m": 4.822263153028694e-10,
+  "max_spatial_balance_relative_error": 1.690009403320033e-14,
+  "max_energy_balance_relative_error": 7.315768834458459e-16,
+  "max_rate_quadrature_relative_error": 0.0009403087347535852,
+  "max_pre_stop_rate_quadrature_relative_error": 3.094208833745456e-05,
+  "footprints": {
+    "scenarios": 72,
+    "photo_comparisons": 48,
+    "max_mass_balance_relative_error": 4.440892098500626e-16
+  },
+  "environment": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.9"
+  }
+}
